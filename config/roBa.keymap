@@ -58,10 +58,10 @@
 
         default_layer {
             bindings = <
-&kp Q             &kp W         &kp E         &kp R                             &kp T                                                       &kp Y           &kp U  &lt 5 I    &kp O    &kp P
-&mt LEFT_SHIFT A  &kp S         &kp D         &kp F                             &kp G        &kp ESCAPE                &kp BACKSPACE        &kp H           &kp J  &kp K      &kp L    &mt RSHIFT COLON
-&kp Z             &kp X         &kp C         &kp V                             &kp B        &lt_to_layer_0 6 TAB      &kp INTERNATIONAL_9  &kp N           &kp M  &kp COMMA  &kp DOT  &kp SLASH
-&kp LCTRL         &kp LEFT_WIN  &kp LEFT_WIN  &lt_to_layer_0 2 INTERNATIONAL_5  &lt 3 SPACE  &mt LALT SPACE            &kp SPACE            &lt 1 INT_KANA                             &kp ENTER
+&kp Q             &kp W         &kp E         &kp R                             &kp T                                                       &kp Y           &kp U  &lt 4 I                 &kp O    &kp P
+&mt LEFT_SHIFT A  &kp S         &kp D         &kp F                             &kp G        &kp ESCAPE                &kp BACKSPACE        &kp H           &kp J  &kp K                   &kp L    &mt RSHIFT COLON
+&kp Z             &kp X         &kp C         &kp V                             &kp B        &lt_to_layer_0 6 TAB      &kp INTERNATIONAL_9  &kp N           &kp M  &lt_to_layer_0 5 COMMA  &kp DOT  &kp SLASH
+&kp LCTRL         &kp LEFT_WIN  &kp LEFT_WIN  &lt_to_layer_0 2 INTERNATIONAL_5  &lt 3 SPACE  &mt LALT SPACE            &kp SPACE            &lt 1 INT_KANA                                          &kp ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -79,7 +79,7 @@
         NUM {
             bindings = <
 &kp MINUS                   &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp PLUS                                                   &kp AT_SIGN     &kp AT_SIGN     &kp NON_US_BACKSLASH  &kp CARET         &kp MINUS
-&kp N0                      &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp ASTERISK  &kp LC(LA(KP_NUMBER_0))      &kp UNDERSCORE  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW          &kp RIGHT_ARROW   &kp PERCENT
+&kp N0                      &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp ASTERISK  &kp LC(LA(KP_NUMBER_0))      &kp UNDERSCORE  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW          &kp RIGHT_ARROW   &kp SEMICOLON
 &mt LEFT_SHIFT KP_NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp PERIOD    &kp EQUAL                    &trans          &kp HOME        &kp END         &kp LESS_THAN         &kp GREATER_THAN  &kp UNDER
 &trans                      &trans        &trans        &trans        &trans        &trans                       &trans          &trans                                                                  &kp PIPE
             >;
