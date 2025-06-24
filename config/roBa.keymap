@@ -44,10 +44,10 @@
     };
 
     macros {
-        to_layer_0: to_layer_0 {
+        esc_lang2: to_layer_0 {
             compatible = "zmk,behavior-macro-one-param";
             #binding-cells = <1>;
-            bindings = <&to 0 &macro_param_1to1 &kp MACRO_PLACEHOLDER>;
+            bindings = <&kp ESC &macro_param_1to1 &kp MACRO_PLACEHOLDER &kp LANGUAGE_2>;
             label = "TO_LAYER_0";
         };
     };
@@ -56,10 +56,17 @@
         lt_to_layer_0: lt_to_layer_0 {
             compatible = "zmk,behavior-hold-tap";
             label = "LAYER_TAP_TO_0";
-            bindings = <&mo>, <&to_layer_0>;
+            bindings = <&mo>, <&esc_lang2>;
 
             #binding-cells = <2>;
             tapping-term-ms = <200>;
+        };
+
+        qq_esc_lang2: qq_esc_lang2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "QQ_ESC_LANG2";
+            #binding-cells = <0>;
+            bindings = <&kp Q>, <&esc_lang2 ESC>;
         };
     };
 
