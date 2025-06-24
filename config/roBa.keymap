@@ -68,6 +68,20 @@
             #binding-cells = <0>;
             bindings = <&kp Q>, <&esc_lang2 ESC>;
         };
+
+        jj_esc_lang2: jj_esc_lang2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "JJ_ESC_LANG2";
+            #binding-cells = <0>;
+            bindings = <&kp J>, <&esc_lang2 ESC>;
+        };
+
+        kk_esc_lang2: kk_esc_lang2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "KK_ESC_LANG2";
+            #binding-cells = <0>;
+            bindings = <&kp K>, <&esc_lang2 ESC>;
+        };
     };
 
     keymap {
