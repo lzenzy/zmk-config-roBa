@@ -66,7 +66,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "QQ_ESC_LANG2";
             #binding-cells = <0>;
-            bindings = <&kp Q>, <&esc_lang2>, <&esc_lang2>;
+            bindings = <&kp Q>, <&kp LANG2>, <&kp LANG2>;
         };
     };
 
