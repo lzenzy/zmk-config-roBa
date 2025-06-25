@@ -160,7 +160,7 @@
 
         NUM {
             bindings = <
-&kp JP_LBRACKET             &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp JP_RBRACKET                                              &kp JP_AT       &kp LEFT_BACKSLASH  &kp JP_YEN      &kp MINUS        &kp JP_CARET
+&kp JP_LBRACKET             &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp JP_RBRACKET                                              &kp JP_AT       &kp BACKSLASH       &kp JP_YEN      &kp MINUS         &kp JP_EQUAL
 &kp N0                      &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp JP_ASTERISK    &kp LC(LA(KP_NUMBER_0))   &kp UNDERSCORE  &kp LEFT_ARROW  &kp DOWN_ARROW      &kp UP_ARROW    &kp RIGHT_ARROW   &kp SEMICOLON
 &mt LEFT_SHIFT KP_NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp JP_EQUAL       &kp PLUS                  &trans          &kp HOME        &kp PAGE_DOWN       &kp PAGE_UP     &kp END           &kp JP_UNDERSCORE
 &trans                      &kp MINUS     &trans        &trans        &trans             &trans                    &trans          &trans                                                                &kp JP_ASTERISK
