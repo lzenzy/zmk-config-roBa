@@ -143,7 +143,7 @@
 &qq_esc_lang2     &kp W       &kp E     &kp R                &kp T                                                   &kp Y        &kp U          &lt 4 I      &kp O    &kp P
 &mt LEFT_SHIFT A  &kp S       &kp D     &kp F                &kp G        &esc_lang2                &kp BACKSPACE    &kp H        &jj_esc_lang2  &kp K        &kp L    &mt RSHIFT JP_COLON
 &mt LSHIFT Z      &kp X       &kp C     &kp V                &kp B        &lt_to_layer_0 6 TAB      &kp PRINTSCREEN  &kp N        &kp M          &lt 5 COMMA  &kp DOT  &mt RSHIFT BACKSLASH
-&kp LCTRL         &kp K_COPY  &kp LALT  &mt LALT LANGUAGE_2  &lt 2 SPACE  &lt 3 BSPC                &kp SPACE        &lt 2 LANG1                                       &kp ENTER
+&kp LCTRL         &kp K_COPY  &kp LALT  &mt LALT LANGUAGE_2  &lt 2 SPACE  &lt 3 BSPC                &kp SPACE        &lt 2 LANG1                                       &lt 4 ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -160,19 +160,19 @@
 
         NUM {
             bindings = <
-&kp JP_LBRACKET             &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp JP_RBRACKET                                              &kp JP_AT       &kp JP_AT           &kp JP_YEN      &kp MINUS         &kp JP_CARET
-&kp N0                      &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp JP_ASTERISK    &kp LC(LA(KP_NUMBER_0))   &kp UNDERSCORE  &kp LEFT_ARROW  &kp DOWN_ARROW      &kp UP_ARROW    &kp RIGHT_ARROW   &kp SEMICOLON
-&mt LEFT_SHIFT KP_NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp JP_EQUAL       &kp PLUS                  &trans          &kp HOME        &kp PAGE_DOWN       &kp PAGE_UP     &kp END           &kp JP_UNDERSCORE
-&trans                      &kp MINUS     &trans        &trans        &trans             &trans                    &trans          &trans                                                                &kp JP_ASTERISK
+&kp JP_LBRACKET             &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp JP_RBRACKET                                               &kp JP_AT       &kp JP_AT       &kp JP_YEN    &kp MINUS        &kp JP_CARET
+&kp N0                      &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp JP_ASTERISK  &kp LC(LA(KP_NUMBER_0))      &kp UNDERSCORE  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp SEMICOLON
+&mt LEFT_SHIFT KP_NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp JP_EQUAL     &kp PLUS                     &trans          &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END          &kp JP_UNDERSCORE
+&trans                      &kp MINUS     &trans        &trans        &trans           &trans                       &trans          &trans                                                         &kp JP_ASTERISK
             >;
         };
 
         ARROW {
             bindings = <
-&kp JP_LBRACE     &kp JP_QUOTE     &kp JP_LPAREN      &kp JP_RPAREN       &kp JP_RBRACE                      &trans    &kp JP_BACKQUOTE   &kp JP_PIPE  &kp JP_EQUAL  &kp JP_TILDE
-&kp LEFT_SHIFT    &kp DOLLAR       &kp PERCENT        &kp JP_AMPERSAND    &kp MINUS       &trans    &trans   &trans    &trans             &trans       &trans        &trans
-&kp PLUS          &kp EXCLAMATION  &kp JP_DQUOTE      &kp HASH            &kp JP_EQUAL    &trans    &trans   &trans    &trans             &trans       &trans        &trans
-&trans            &trans           &trans             &trans              &trans          &trans    &trans   &trans                                    &trans
+&kp JP_LBRACE   &kp JP_QUOTE     &kp JP_LPAREN  &kp JP_RPAREN     &kp JP_RBRACE                      &trans  &kp JP_BACKQUOTE  &kp JP_PIPE  &kp JP_EQUAL  &kp JP_TILDE
+&kp LEFT_SHIFT  &kp DOLLAR       &kp PERCENT    &kp JP_AMPERSAND  &kp MINUS      &trans      &trans  &trans  &trans            &trans       &trans        &trans
+&kp PLUS        &kp EXCLAMATION  &kp JP_DQUOTE  &kp HASH          &kp JP_EQUAL   &trans      &trans  &trans  &trans            &trans       &trans        &trans
+&trans          &trans           &trans         &trans            &trans         &trans      &trans  &trans                                               &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
