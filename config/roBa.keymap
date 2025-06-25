@@ -140,10 +140,10 @@
 
         default_layer {
             bindings = <
-&qq_esc_lang2     &kp W       &kp E     &kp R                &kp T                                                   &kp Y        &kp U          &lt 4 I      &kp O    &kp P
-&mt LEFT_SHIFT A  &kp S       &kp D     &kp F                &kp G        &esc_lang2                &kp BACKSPACE    &kp H        &jj_esc_lang2  &kp K        &kp L    &mt RSHIFT JP_COLON
-&mt LSHIFT Z      &kp X       &kp C     &kp V                &kp B        &lt_to_layer_0 6 TAB      &kp PRINTSCREEN  &kp N        &kp M          &lt 5 COMMA  &kp DOT  &mt RSHIFT BACKSLASH
-&kp LCTRL         &kp K_COPY  &kp LALT  &mt LALT LANGUAGE_2  &lt 2 SPACE  &lt 3 BSPC                &kp SPACE        &lt 2 LANG1                                       &lt 4 ENTER
+&qq_esc_lang2     &kp W           &kp E     &kp R             &kp T                                                            &kp Y        &kp U          &lt 4 I      &kp O    &kp P
+&mt LEFT_SHIFT A  &kp S           &kp D     &kp F             &kp G        &esc_lang2                &kp K_VOLUME_UP           &kp H        &jj_esc_lang2  &kp K        &kp L    &mt RSHIFT JP_COLON
+&mt LSHIFT Z      &kp X           &kp C     &kp V             &kp B        &lt_to_layer_0 6 TAB      &mt K_MUTE K_VOLUME_DOWN  &kp N        &kp M          &lt 5 COMMA  &kp DOT  &mt RSHIFT BACKSLASH
+&kp LCTRL         &lt 1 LEFT_WIN  &kp LALT  &lt 2 LANGUAGE_2  &lt 3 SPACE  &lt 3 BSPC                &kp SPACE                 &lt 2 LANG1                                       &lt 4 ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -151,10 +151,10 @@
 
         FUNCTION {
             bindings = <
-&trans   &kp F7  &kp F8  &kp F9  &trans                               &kp C_VOLUME_UP    &kp F17  &kp F18  &kp F19  &kp C_PLAY_PAUSE
-&kp F10  &kp F4  &kp F5  &kp F6  &trans  &trans      &kp K_MUTE       &kp C_VOLUME_DOWN  &kp F14  &kp F15  &kp F16  &kp PAGE_UP
-&trans   &kp F1  &kp F2  &kp F3  &trans  &trans      &kp PRINTSCREEN  &trans             &kp F11  &kp F12  &kp F13  &kp PAGE_DOWN
-&trans   &trans  &trans  &trans  &trans  &trans      &trans           &trans                                        &kp RCTRL
+&trans   &kp F7  &kp F8  &kp F9  &trans                                        &kp PRINTSCREEN    &kp F17  &kp F18  &kp F19  &kp C_PLAY_PAUSE
+&kp F10  &kp F4  &kp F5  &kp F6  &trans  &trans      &kp C_VOLUME_UP           &kp C_VOLUME_DOWN  &kp F14  &kp F15  &kp F16  &kp PAGE_UP
+&trans   &kp F1  &kp F2  &kp F3  &trans  &trans      &mt K_MUTE C_VOLUME_DOWN  &trans             &kp F11  &kp F12  &kp F13  &kp PAGE_DOWN
+&trans   &trans  &trans  &trans  &trans  &trans      &trans                    &trans                                        &kp RCTRL
             >;
         };
 
@@ -202,33 +202,6 @@
 &trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans        &trans        &trans        &trans        &trans
 &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans      &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
 &trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans                                                  &bt BT_CLR_ALL
-            >;
-        };
-
-        layer_7 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
-            >;
-        };
-
-        layer_8 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
-            >;
-        };
-
-        layer_9 {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
         };
     };
