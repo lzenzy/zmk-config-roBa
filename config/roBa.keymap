@@ -28,7 +28,7 @@
         };
 
         op_is_backspace {
-            bindings = <&kp BACKSPACE>;
+            bindings = <&kp DEL>;
             key-positions = <8 9>;
         };
 
@@ -37,14 +37,19 @@
             key-positions = <20 21>;
         };
 
-        ASisESC {
-            bindings = <&kp ESC>;
+        ASisTAG {
+            bindings = <&kp TAB>;
             key-positions = <10 11>;
         };
 
         dk_backspace {
             bindings = <&kp BACKSPACE>;
             key-positions = <19 20>;
+        };
+
+        io_dell {
+            bindings = <&kp DEL>;
+            key-positions = <7 8>;
         };
     };
 
@@ -109,10 +114,10 @@
 
         default_layer {
             bindings = <
-&qq_esc_lang2     &kp W       &kp E         &kp R                &kp T                                                              &kp Y        &kp U          &lt 4 I                 &kp O    &kp P
-&mt LEFT_SHIFT A  &kp S       &kp D         &kp F                &kp G             &esc_lang2                      &kp BACKSPACE    &kp H        &jj_esc_lang2  &kp K                   &kp L    &mt RSHIFT COLON
-&kp Z             &kp X       &kp C         &kp V                &kp B             &lt_to_layer_0 6 TAB            &kp PRINTSCREEN  &kp N        &kp M          &lt_to_layer_0 5 COMMA  &kp DOT  &kp SLASH
-&kp LCTRL         &kp K_COPY  &kp LEFT_WIN  &mt LALT LANGUAGE_2  &lt 2 LANGUAGE_2  &lt_to_layer_0 3 BACKSPACE      &kp SPACE        &lt 2 LANG1                                                  &kp ENTER
+&qq_esc_lang2     &kp W       &kp E         &kp R                &kp T                                                              &kp Y        &kp U          &lt 4 I      &kp O    &kp P
+&mt LEFT_SHIFT A  &kp S       &kp D         &kp F                &kp G             &esc_lang2                      &kp BACKSPACE    &kp H        &jj_esc_lang2  &kp K        &kp L    &mt RSHIFT COLON
+&mt Z LSHIFT      &kp X       &kp C         &kp V                &kp B             &lt_to_layer_0 6 TAB            &kp PRINTSCREEN  &kp N        &kp M          &lt 5 COMMA  &kp DOT  &mt RSHIFT SLASH
+&kp LCTRL         &kp K_COPY  &kp LEFT_WIN  &mt LALT LANGUAGE_2  &lt 2 LANGUAGE_2  &lt_to_layer_0 3 BACKSPACE      &kp SPACE        &lt 2 LANG1                                       &kp ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
