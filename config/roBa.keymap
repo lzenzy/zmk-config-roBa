@@ -141,8 +141,8 @@
         default_layer {
             bindings = <
 &qq_esc_lang2     &kp W       &kp E     &kp R                &kp T                                                   &kp Y        &kp U          &lt 4 I      &kp O    &kp P
-&mt LEFT_SHIFT A  &kp S       &kp D     &kp F                &kp G        &esc_lang2                &kp BACKSPACE    &kp H        &jj_esc_lang2  &kp K        &kp L    &kp JP_COLON
-&mt LSHIFT Z      &kp X       &kp C     &kp V                &kp B        &lt_to_layer_0 6 TAB      &kp PRINTSCREEN  &kp N        &kp M          &lt 5 COMMA  &kp DOT  &kp LS(BACKSLASH)
+&mt LEFT_SHIFT A  &kp S       &kp D     &kp F                &kp G        &esc_lang2                &kp BACKSPACE    &kp H        &jj_esc_lang2  &kp K        &kp L    &mt RSHIFT JP_COLON
+&mt LSHIFT Z      &kp X       &kp C     &kp V                &kp B        &lt_to_layer_0 6 TAB      &kp PRINTSCREEN  &kp N        &kp M          &lt 5 COMMA  &kp DOT  &mt RSHIFT BACKSLASH
 &kp LCTRL         &kp K_COPY  &kp LALT  &mt LALT LANGUAGE_2  &lt 2 SPACE  &lt 3 BSPC                &kp SPACE        &lt 2 LANG1                                       &kp ENTER
             >;
 
@@ -169,8 +169,8 @@
 
         ARROW {
             bindings = <
-&kp LEFT_BRACKET  &kp SQT          &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACKET                      &trans  &kp SQT  &kp PIPE  &kp EQUAL  &kp TILDE
-&kp LEFT_SHIFT    &kp DOLLAR       &kp PERCENT           &kp AMPERSAND          &kp MINUS          &trans      &trans  &trans  &trans   &trans    &trans     &trans
+&kp LEFT_BRACKET  &kp JP_QUOTE          &kp LEFT_PARENTHESIS  &kp RIGHT_PARENTHESIS  &kp RIGHT_BRACKET                      &trans  &kp SQT  &kp PIPE  &kp EQUAL  &kp TILDE
+&kp LEFT_SHIFT    &kp DOLLAR       &kp PERCENT           &kp JP_AMPERSAND          &kp MINUS          &trans      &trans  &trans  &trans   &trans    &trans     &trans
 &kp PLUS          &kp EXCLAMATION  &kp LS(NUMBER_2)      &kp HASH               &kp EQUAL          &trans      &trans  &trans  &trans   &trans    &trans     &trans
 &trans            &trans           &trans                &trans                 &trans             &trans      &trans  &trans                                &trans
             >;
