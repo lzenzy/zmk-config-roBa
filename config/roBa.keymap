@@ -68,6 +68,24 @@
             #binding-cells = <0>;
             bindings = <&kp Q>, <&kp LANG2>, <&kp LANG2>;
         };
+
+        jj_esc_lang2: jj_esc_lang2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "JJ_ESC_LANG2";
+            #binding-cells = <0>;
+            bindings = <&kp J>, <&esc_lang2>, <&esc_lang2>;
+
+            tapping-term-ms = <300>;
+        };
+
+        kk_esc_lang2: kk_esc_lang2 {
+            compatible = "zmk,behavior-tap-dance";
+            label = "KK_ESC_LANG2";
+            #binding-cells = <0>;
+            bindings = <&kp K>, <&esc_lang2>, <&esc_lang2>;
+
+            tapping-term-ms = <400>;
+        };
     };
 
     keymap {
@@ -75,10 +93,10 @@
 
         default_layer {
             bindings = <
-&qq_esc_lang2     &kp W       &kp E         &kp R                &kp T                                                              &kp Y        &kp U  &lt 4 I                 &kp O    &kp P
-&mt LEFT_SHIFT A  &kp S       &kp D         &kp F                &kp G             &esc_lang2                      &kp BACKSPACE    &kp H        &kp J  &kp K                   &kp L    &mt RSHIFT COLON
-&kp Z             &kp X       &kp C         &kp V                &kp B             &lt_to_layer_0 6 TAB            &kp PRINTSCREEN  &kp N        &kp M  &lt_to_layer_0 5 COMMA  &kp DOT  &kp SLASH
-&kp LCTRL         &kp K_COPY  &kp LEFT_WIN  &mt LALT LANGUAGE_2  &lt 2 LANGUAGE_2  &lt_to_layer_0 3 BACKSPACE      &kp SPACE        &lt 2 LANG1                                          &kp ENTER
+&qq_esc_lang2     &kp W       &kp E         &kp R                &kp T                                                              &kp Y        &kp U          &lt 4 I                 &kp O    &kp P
+&mt LEFT_SHIFT A  &kp S       &kp D         &kp F                &kp G             &esc_lang2                      &kp BACKSPACE    &kp H        &jj_esc_lang2  &kk_esc_lang2           &kp L    &mt RSHIFT COLON
+&kp Z             &kp X       &kp C         &kp V                &kp B             &lt_to_layer_0 6 TAB            &kp PRINTSCREEN  &kp N        &kp M          &lt_to_layer_0 5 COMMA  &kp DOT  &kp SLASH
+&kp LCTRL         &kp K_COPY  &kp LEFT_WIN  &mt LALT LANGUAGE_2  &lt 2 LANGUAGE_2  &lt_to_layer_0 3 BACKSPACE      &kp SPACE        &lt 2 LANG1                                                  &kp ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
