@@ -136,7 +136,7 @@
             >;
         };
 
-        NUM {
+        NUM_ARROW {
             bindings = <
 &kp JP_LBRACKET             &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp JP_RBRACKET                                               &kp JP_AT       &kp JP_AT       &kp JP_YEN    &kp MINUS        &kp JP_CARET
 &kp N0                      &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp JP_ASTERISK  &kp LC(LA(KP_NUMBER_0))      &kp UNDERSCORE  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp SEMICOLON
@@ -145,11 +145,11 @@
             >;
         };
 
-        ARROW {
+        SYMBOL {
             bindings = <
-&kp JP_LBRACE   &kp JP_QUOTE     &kp JP_LPAREN  &kp JP_RPAREN     &kp JP_RBRACE                      &trans  &kp JP_BACKQUOTE  &kp JP_PIPE  &kp JP_EQUAL  &kp JP_TILDE
-&kp LEFT_SHIFT  &kp DOLLAR       &kp PERCENT    &kp JP_AMPERSAND  &kp MINUS      &trans      &trans  &trans  &trans            &trans       &trans        &trans
-&kp PLUS        &kp EXCLAMATION  &kp JP_DQUOTE  &kp HASH          &kp JP_EQUAL   &trans      &trans  &trans  &trans            &trans       &trans        &trans
+&kp JP_LBRACE   &kp JP_QUOTE     &kp JP_LPAREN  &kp JP_RPAREN     &kp JP_RBRACE                      &kp JP_LBRACKET  &kp JP_BACKQUOTE  &kp JP_PIPE  &kp JP_EQUAL  &kp JP_TILDE
+&kp LEFT_SHIFT  &kp DOLLAR       &kp PERCENT    &kp JP_AMPERSAND  &kp MINUS      &trans      &trans  &kp JP_RBRACKET  &kp JP_ASTERISK   &kp JP_AT    &kp JP_YEN    &kp SEMICOLON
+&kp PLUS        &kp EXCLAMATION  &kp JP_DQUOTE  &kp HASH          &kp JP_EQUAL   &trans      &trans  &kp JP_CARET     &kp JP_UNDERSCORE &trans       &trans        &trans
 &trans          &trans           &trans         &trans            &trans         &trans      &trans  &trans                                               &trans
             >;
 
