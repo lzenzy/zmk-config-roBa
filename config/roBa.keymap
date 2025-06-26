@@ -115,24 +115,6 @@
 
             tapping-term-ms = <300>;
         };
-
-        kk_esc_lang2: kk_esc_lang2 {
-            compatible = "zmk,behavior-tap-dance";
-            label = "KK_ESC_LANG2";
-            #binding-cells = <0>;
-            bindings = <&kp K>, <&esc_lang2>, <&esc_lang2>;
-
-            tapping-term-ms = <400>;
-        };
-
-        new_behavior: new_behavior {
-            compatible = "zmk,behavior-tap-dance";
-            label = "NEW_BEHAVIOR";
-            #binding-cells = <0>;
-            bindings = <&kp K>, <&esc_lang2>, <&esc_lang2>;
-
-            tapping-term-ms = <300>;
-        };
     };
 
     keymap {
