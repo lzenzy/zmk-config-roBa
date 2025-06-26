@@ -34,6 +34,10 @@
 #define JP_EISU         LANGUAGE_2        // 英数
 #define JP_HANZEN       GRAVE             // 半角/全角
 
+// Apple用キー定義 (macOS対応)
+#define APPLE_CMD       LEFT_GUI          // Command key
+#define APPLE_OPT       LEFT_ALT          // Option key
+
 / {
     combos {
         compatible = "zmk,combos";
@@ -82,6 +86,11 @@
             bindings = <&esc_lang2>;
             key-positions = <18 19>;
         };
+
+        apple_mode_toggle {
+            bindings = <&apple_toggle>;
+            key-positions = <0 9>;
+        };
     };
 
     macros {
@@ -90,6 +99,13 @@
             #binding-cells = <0>;
             bindings = <&kp ESC &kp LANGUAGE_2>;
             label = "TO_LAYER_0";
+        };
+
+        apple_toggle: apple_toggle {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&tog 7>;
+            label = "APPLE_TOGGLE";
         };
     };
 
@@ -177,10 +193,21 @@
         layer_6 {
             bindings = <
 &trans  &trans        &trans        &trans        &trans                           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans        &trans        &trans        &trans        &trans
+&trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans        &trans        &trans        &trans        &apple_toggle
 &trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans      &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
 &trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans                                                  &bt BT_CLR_ALL
             >;
+        };
+
+        APPLE {
+            bindings = <
+&qq_esc_lang2     &kp W           &kp E         &kp R                    &kp T                                                            &kp Y        &kp U  &lt 4 I      &kp O    &kp P
+&mt LEFT_SHIFT A  &kp S           &kp D         &kp F                    &kp G        &esc_lang2                &kp K_VOLUME_UP           &kp H        &kp J  &kp K        &kp L    &mt RSHIFT JP_COLON
+&mt LSHIFT Z      &kp X           &kp C         &kp V                    &kp B        &lt_to_layer_0 6 TAB      &mt K_MUTE K_VOLUME_DOWN  &kp N        &kp M  &lt 5 COMMA  &kp DOT  &mt RSHIFT SLASH
+&kp LCTRL         &lt 1 APPLE_CMD &kp APPLE_CMD &mt APPLE_OPT LANGUAGE_2 &lt 2 SPACE  &lt 3 BSPC                &kp SPACE                 &lt 2 LANG1                               &lt 4 ENTER
+            >;
+
+            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
     };
 };
