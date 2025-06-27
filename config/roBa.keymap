@@ -235,7 +235,16 @@
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
 
-        // レイヤー6（iPad）はトリガー専用のため定義不要
+        IPAD {
+            bindings = 
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
+        };
 
         IPAD_NUM_ARROW {
             bindings = 
