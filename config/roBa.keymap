@@ -7,8 +7,7 @@
     flavor = "balanced";
     quick-tap-ms = <0>;
 };
-CONFIG_ZMK_MOUSE_LAYER_AUTO=y
-CONFIG_ZMK_MOUSE_LAYER=MOUSE
+
 
 
 // OS設定を日本語キーボードのまま使用するための変換定義
