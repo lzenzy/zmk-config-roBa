@@ -225,10 +225,10 @@
 
         SJIS {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &mt RSHIFT JP_COLON
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans       &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans       &trans  &mt RSHIFT JP_COLON
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &lt 5 COMMA  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                               &trans
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
