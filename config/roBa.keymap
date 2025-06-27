@@ -34,21 +34,12 @@
 #define JP_EISU         LANGUAGE_2        // 英数
 #define JP_HANZEN       GRAVE             // 半角/全角
 
-/ {
-    conditional_layers {
-        compatible = "zmk,conditional-layers";
-        
-        ipad_num_arrow {
-            if-layers = <2 7>;      // NUM_ARROW + iPad
-            then-layer = <8>;       // iPad用NUM_ARROW
-        };
-        
-        ipad_symbol {
-            if-layers = <3 7>;      // SYMBOL + iPad
-            then-layer = <9>;       // iPad用SYMBOL
-        };
-    };
+// Apple用キー定義 (macOS対応)
 
+#define APPLE_CMD       LEFT_GUI          // Command key
+#define APPLE_OPT       LEFT_ALT          // Option key
+
+/ {
     combos {
         compatible = "zmk,combos";
 
@@ -102,9 +93,9 @@
             key-positions = <0 9>;
         };
 
-        ipad_mode_toggle {
-            bindings = <&ipad_toggle>;
-            key-positions = <2 7>;
+        sjis_mode_toggle {
+            bindings = <&sjis_toggle>;
+            key-positions = <1 8>;
         };
     };
 
@@ -119,36 +110,15 @@
         apple_toggle: apple_toggle {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tog 5>;
+            bindings = <&tog 7>;
             label = "APPLE_TOGGLE";
         };
 
-        ipad_toggle: ipad_toggle {
+        sjis_toggle: sjis_toggle {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tog 7>;
-            label = "IPAD_TOGGLE";
-        };
-
-        bt_mac: bt_mac {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&bt BT_SEL 2>, <&macro_wait_time 100>, <&to 5>;
-            label = "BT_MAC";
-        };
-
-        bt_ipad: bt_ipad {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&bt BT_SEL 1>, <&macro_wait_time 100>, <&to 5>, <&macro_wait_time 50>, <&tog 7>;
-            label = "BT_IPAD";
-        };
-
-        bt_other: bt_other {
-            compatible = "zmk,behavior-macro";
-            #binding-cells = <0>;
-            bindings = <&to 0>, <&macro_wait_time 50>;
-            label = "BT_OTHER";
+            bindings = <&tog 8>;
+            label = "SJIS_TOGGLE";
         };
     };
 
@@ -166,8 +136,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "QQ_ESC_LANG2";
             #binding-cells = <0>;
-            bindings = <&kp Q>, <&kp LANG2>, <&kp LANG2>;
-
+            bindings = <&kp Q>, <&kp LANGUAGE_2>, <&kp LANGUAGE_2>;
             tapping-term-ms = <300>;
         };
     };
@@ -176,18 +145,18 @@
         compatible = "zmk,keymap";
 
         default_layer {
-            bindings = 
-&qq_esc_lang2     &kp W         &kp E         &kp R                    &kp T                                                                 &kp Y        &kp U  &lt 10 I     &kp O    &kp P
+            bindings = <
+&qq_esc_lang2     &kp W         &kp E         &kp R                    &kp T                                                                 &kp Y        &kp U  &lt 4 I      &kp O    &kp P
 &mt LEFT_SHIFT A  &kp S         &kp D         &kp F                    &kp G             &esc_lang2                &kp K_VOLUME_UP           &kp H        &kp J  &kp K        &kp L    &mt RSHIFT SEMICOLON
-&mt LSHIFT Z      &kp X         &kp C         &kp V                    &kp B             &lt_to_layer_0 4 TAB      &mt K_MUTE K_VOLUME_DOWN  &kp N        &kp M  &lt 11 COMMA &kp DOT  &mt RSHIFT SLASH
-&kp LCTRL         &lt 1 K_MUTE  &kp LEFT_WIN  &mt LEFT_ALT LANGUAGE_2  &lt 2 LANGUAGE_2  &lt 3 BSPC                &kp SPACE                 &lt 2 LANG1                               &lt 10 ENTER
+&mt LSHIFT Z      &kp X         &kp C         &kp V                    &kp B             &lt_to_layer_0 6 TAB      &mt K_MUTE K_VOLUME_DOWN  &kp N        &kp M  &lt 5 COMMA  &kp DOT  &mt RSHIFT SLASH
+&kp LCTRL         &lt 1 K_MUTE  &kp LEFT_WIN  &mt LEFT_ALT LANGUAGE_2  &lt 2 LANGUAGE_2  &lt 3 BSPC                &kp SPACE                 &lt 2 LANGUAGE_1                             &lt 4 ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
 
         FUNCTION {
-            bindings = 
+            bindings = <
 &trans   &kp F7  &kp F8  &kp F9  &trans                                        &kp PRINTSCREEN    &kp F17  &kp F18  &kp F19  &kp C_PLAY_PAUSE
 &kp F10  &kp F4  &kp F5  &kp F6  &trans  &trans      &kp C_VOLUME_UP           &kp C_VOLUME_DOWN  &kp F14  &kp F15  &kp F16  &kp PAGE_UP
 &trans   &kp F1  &kp F2  &kp F3  &trans  &trans      &mt K_MUTE C_VOLUME_DOWN  &trans             &kp F11  &kp F12  &kp F13  &kp PAGE_DOWN
@@ -196,7 +165,7 @@
         };
 
         NUM_ARROW {
-            bindings = 
+            bindings = <
 &kp JP_LBRACKET             &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp JP_RBRACKET                                               &kp JP_AT       &kp JP_AT       &kp JP_YEN    &kp MINUS        &kp JP_CARET
 &kp N0                      &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp JP_ASTERISK  &kp LC(LA(KP_NUMBER_0))      &kp UNDERSCORE  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp SEMICOLON
 &mt LEFT_SHIFT KP_NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp JP_EQUAL     &kp PLUS                     &trans          &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END          &kp JP_UNDERSCORE
@@ -205,7 +174,7 @@
         };
 
         SYMBOL {
-            bindings = 
+            bindings = <
 &kp JP_LBRACE   &kp JP_QUOTE     &kp JP_LPAREN  &kp JP_RPAREN     &kp JP_RBRACE                      &kp JP_LBRACKET  &kp JP_BACKQUOTE   &kp JP_PIPE  &kp JP_EQUAL  &kp JP_TILDE
 &kp LEFT_SHIFT  &kp DOLLAR       &kp PERCENT    &kp JP_AMPERSAND  &kp MINUS      &trans      &trans  &kp JP_RBRACKET  &kp JP_ASTERISK    &kp JP_AT    &kp JP_YEN    &kp SEMICOLON
 &kp PLUS        &kp EXCLAMATION  &kp JP_DQUOTE  &kp HASH          &kp JP_EQUAL   &trans      &trans  &kp JP_CARET     &kp JP_UNDERSCORE  &trans       &trans        &trans
@@ -215,50 +184,8 @@
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
         };
 
-        SETTINGS {
-            bindings = 
-&trans  &trans        &trans        &trans        &trans                           &bt BT_SEL 0  &bt_ipad      &bt_mac       &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans        &trans        &trans        &trans        &apple_toggle
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans      &bootloader  &trans        &trans        &trans        &ipad_toggle  &bt BT_CLR
-&trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans                                                  &bt BT_CLR_ALL
-            >;
-        };
-
-        APPLE {
-            bindings = 
-&trans  &trans  &trans         &trans                    &trans                      &trans  &trans  &trans       &trans  &trans
-&trans  &trans  &trans         &trans                    &trans  &trans      &trans  &trans  &trans  &trans       &trans  &trans
-&trans  &trans  &trans         &trans                    &trans  &trans      &trans  &trans  &trans  &lt 11 COMMA &trans  &trans
-&trans  &trans  &kp LEFT_ALT   &mt LEFT_GUI LANGUAGE_2   &trans  &trans      &trans  &trans                               &trans
-            >;
-
-            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
-        };
-
-        // レイヤー7（iPad）はトリガー専用のため定義不要
-
-        IPAD_NUM_ARROW {
-            bindings = 
-&kp RIGHT_BRACKET           &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp BACKSLASH                                               &kp LEFT_BRACKET  &kp LEFT_BRACKET  &kp 0x89      &kp MINUS        &kp EQUAL
-&kp N0                      &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp DOUBLE_QUOTES  &kp LC(LA(KP_NUMBER_0))      &kp UNDERSCORE  &kp LEFT_ARROW    &kp DOWN_ARROW    &kp UP_ARROW  &kp RIGHT_ARROW  &kp SEMICOLON
-&mt LEFT_SHIFT KP_NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp UNDER          &kp PLUS                     &trans          &kp HOME          &kp PAGE_DOWN     &kp PAGE_UP   &kp END          &kp LS(0x87)
-&trans                      &kp MINUS     &trans        &trans        &trans             &trans                       &trans          &trans                                                               &kp DOUBLE_QUOTES
-            >;
-        };
-
-        IPAD_SYMBOL {
-            bindings = 
-&kp RIGHT_BRACE  &kp AMPERSAND    &kp ASTERISK       &kp LEFT_PARENTHESIS  &kp PIPE                           &kp RIGHT_BRACKET  &kp LEFT_BRACE    &kp LS(0x89)  &kp UNDER  &kp PLUS
-&kp LEFT_SHIFT   &kp DOLLAR       &kp PERCENT        &kp CARET             &kp MINUS      &trans      &trans  &kp BACKSLASH      &kp DOUBLE_QUOTES &kp LEFT_BRACKET &kp 0x89   &kp SEMICOLON
-&kp PLUS         &kp EXCLAMATION  &kp AT             &kp HASH              &kp UNDER      &trans      &trans  &kp EQUAL          &kp LS(0x87)      &trans        &trans     &trans
-&trans           &trans           &trans             &trans                &trans         &trans      &trans  &trans                                                      &trans
-            >;
-
-            sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
-        };
-
         MOUSE {
-            bindings = 
+            bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &mkp MB1  &mkp MB2  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &trans    &trans  &trans
@@ -267,12 +194,43 @@
         };
 
         SCROLL {
-            bindings = 
+            bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
+        };
+
+        layer_6 {
+            bindings = <
+&trans  &trans        &trans        &trans        &trans                           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans        &trans        &trans        &sjis_toggle  &apple_toggle
+&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans      &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
+&trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans                                                  &bt BT_CLR_ALL
+            >;
+        };
+
+        APPLE {
+            bindings = <
+&trans  &trans  &trans         &trans                    &trans                      &trans  &trans  &trans       &trans  &trans
+&trans  &trans  &trans         &trans                    &trans  &trans      &trans  &trans  &trans  &trans       &trans  &trans
+&trans  &trans  &trans         &trans                    &trans  &trans      &trans  &trans  &trans  &lt 5 COMMA  &trans  &trans
+&trans  &trans  &kp APPLE_OPT  &mt APPLE_CMD LANGUAGE_2  &trans  &trans      &trans  &trans                               &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
+        };
+
+        SJIS {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans       &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans       &trans  &mt RSHIFT JP_COLON
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &lt 5 COMMA  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                               &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
     };
 }
