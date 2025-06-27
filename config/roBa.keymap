@@ -246,7 +246,15 @@ CONFIG_ZMK_MOUSE_LAYER=MOUSE
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
 
-        // レイヤー7（iPad）はトリガー専用のため定義不要
+        IPAD {
+            bindings = <
+&trans  &trans  &trans        &trans                   &trans                      &trans  &trans  &trans       &trans  &trans
+&trans  &trans  &trans        &trans                   &trans  &trans      &trans  &trans  &trans  &trans       &trans  &trans
+&trans  &trans  &trans        &trans                   &trans  &trans      &trans  &trans  &trans  &trans       &trans  &trans
+&trans  &trans  &trans        &trans                   &trans  &trans      &trans  &trans                               &trans
+            >;
+        };
+
 
         IPAD_NUM_ARROW {
             bindings = <
