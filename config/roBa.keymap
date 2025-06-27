@@ -37,14 +37,14 @@
 / {
     conditional_layers {
         compatible = "zmk,conditional-layers";
-        
+
         ipad_num_arrow {
-            if-layers = <2 7>;      // NUM_ARROW + iPad
+            if-layers = <2 8>;      // NUM_ARROW + iPad
             then-layer = <8>;       // iPad用NUM_ARROW
         };
-        
+
         ipad_symbol {
-            if-layers = <3 7>;      // SYMBOL + iPad
+            if-layers = <3 8>;      // SYMBOL + iPad
             then-layer = <9>;       // iPad用SYMBOL
         };
     };
@@ -126,7 +126,7 @@
         ipad_toggle: ipad_toggle {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tog 7>;
+            bindings = <&tog 8>;
             label = "IPAD_TOGGLE";
         };
 
@@ -134,13 +134,20 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&bt BT_SEL 2>, <&macro_wait_time 100>, <&to 5>;
+
             label = "BT_MAC";
         };
 
         bt_ipad: bt_ipad {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 1>, <&macro_wait_time 100>, <&to 5>, <&macro_wait_time 50>, <&tog 7>;
+            bindings =
+                <&bt BT_SEL 1>,
+                <&macro_wait_time 100>,
+                <&to 5>,
+                <&macro_wait_time 50>,
+                <&tog 8>;
+
             label = "BT_IPAD";
         };
 
@@ -148,6 +155,7 @@
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&to 0>, <&macro_wait_time 50>;
+
             label = "BT_OTHER";
         };
     };
@@ -177,10 +185,10 @@
 
         default_layer {
             bindings = <
-&qq_esc_lang2     &kp W         &kp E         &kp R                    &kp T                                                                 &kp Y        &kp U  &lt 10 I     &kp O    &kp P
+&qq_esc_lang2     &kp W         &kp E         &kp R                    &kp T                                                                 &kp Y        &kp U  &lt 0 I      &kp O    &kp P
 &mt LEFT_SHIFT A  &kp S         &kp D         &kp F                    &kp G             &esc_lang2                &kp K_VOLUME_UP           &kp H        &kp J  &kp K        &kp L    &mt RSHIFT SEMICOLON
-&mt LSHIFT Z      &kp X         &kp C         &kp V                    &kp B             &lt_to_layer_0 4 TAB      &mt K_MUTE K_VOLUME_DOWN  &kp N        &kp M  &lt 11 COMMA &kp DOT  &mt RSHIFT SLASH
-&kp LCTRL         &lt 1 K_MUTE  &kp LEFT_WIN  &mt LEFT_ALT LANGUAGE_2  &lt 2 LANGUAGE_2  &lt 3 BSPC                &kp SPACE                 &lt 2 LANG1                               &lt 10 ENTER
+&mt LSHIFT Z      &kp X         &kp C         &kp V                    &kp B             &lt_to_layer_0 4 TAB      &mt K_MUTE K_VOLUME_DOWN  &kp N        &kp M  &lt 0 COMMA  &kp DOT  &mt RSHIFT SLASH
+&kp LCTRL         &lt 1 K_MUTE  &kp LEFT_WIN  &mt LEFT_ALT LANGUAGE_2  &lt 2 LANGUAGE_2  &lt 3 BSPC                &kp SPACE                 &lt 2 LANG1                               &lt 0 ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -197,10 +205,10 @@
 
         NUM_ARROW {
             bindings = <
-&kp JP_LBRACKET             &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp JP_RBRACKET                                               &kp JP_AT       &kp JP_AT       &kp JP_YEN    &kp MINUS        &kp JP_CARET
-&kp N0                      &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp JP_ASTERISK  &kp LC(LA(KP_NUMBER_0))      &kp UNDERSCORE  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp SEMICOLON
-&mt LEFT_SHIFT KP_NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp JP_EQUAL     &kp PLUS                     &trans          &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END          &kp JP_UNDERSCORE
-&trans                      &kp MINUS     &trans        &trans        &trans           &trans                       &trans          &trans                                                         &kp JP_ASTERISK
+&kp JP_LBRACKET             &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp JP_RBRACKET                      &kp JP_AT       &kp JP_AT       &kp JP_YEN    &kp MINUS        &kp JP_CARET
+&kp N0                      &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp JP_ASTERISK  &trans      &trans  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp SEMICOLON
+&mt LEFT_SHIFT KP_NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp JP_EQUAL     &trans      &trans  &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END          &kp JP_UNDERSCORE
+&trans                      &kp MINUS     &trans        &trans        &trans           &trans      &trans  &trans                                                         &kp JP_ASTERISK
             >;
         };
 
@@ -217,19 +225,19 @@
 
         SETTINGS {
             bindings = <
-&trans  &trans        &trans        &trans        &trans                           &bt BT_SEL 0  &bt_ipad      &bt_mac       &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans        &trans        &trans        &trans        &apple_toggle
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans      &bootloader  &trans        &trans        &trans        &ipad_toggle  &bt BT_CLR
-&trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans                                                  &bt BT_CLR_ALL
+&trans  &trans        &trans        &trans        &trans                           &bt BT_SEL 0  &bt_ipad  &bt_mac  &bt BT_SEL 3  &bt BT_SEL 4
+&trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans        &trans    &trans   &trans        &apple_toggle
+&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans      &bootloader  &trans        &trans    &trans   &ipad_toggle  &bt BT_CLR
+&trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans                                         &bt BT_CLR_ALL
             >;
         };
 
         APPLE {
             bindings = <
-&trans  &trans  &trans         &trans                    &trans                      &trans  &trans  &trans       &trans  &trans
-&trans  &trans  &trans         &trans                    &trans  &trans      &trans  &trans  &trans  &trans       &trans  &trans
-&trans  &trans  &trans         &trans                    &trans  &trans      &trans  &trans  &trans  &lt 11 COMMA &trans  &trans
-&trans  &trans  &kp LEFT_ALT   &mt LEFT_GUI LANGUAGE_2   &trans  &trans      &trans  &trans                               &trans
+&trans  &trans  &trans        &trans                   &trans                      &trans  &trans  &trans       &trans  &trans
+&trans  &trans  &trans        &trans                   &trans  &trans      &trans  &trans  &trans  &trans       &trans  &trans
+&trans  &trans  &trans        &trans                   &trans  &trans      &trans  &trans  &trans  &lt 0 COMMA  &trans  &trans
+&trans  &trans  &kp LEFT_ALT  &mt LEFT_GUI LANGUAGE_2  &trans  &trans      &trans  &trans                               &trans
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -239,19 +247,19 @@
 
         IPAD_NUM_ARROW {
             bindings = <
-&kp RIGHT_BRACKET           &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp BACKSLASH                                               &kp LEFT_BRACKET  &kp LEFT_BRACKET  &kp 0x89      &kp MINUS        &kp EQUAL
-&kp N0                      &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp DOUBLE_QUOTES  &kp LC(LA(KP_NUMBER_0))      &kp UNDERSCORE  &kp LEFT_ARROW    &kp DOWN_ARROW    &kp UP_ARROW  &kp RIGHT_ARROW  &kp SEMICOLON
-&mt LEFT_SHIFT KP_NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp UNDER          &kp PLUS                     &trans          &kp HOME          &kp PAGE_DOWN     &kp PAGE_UP   &kp END          &kp LS(0x87)
-&trans                      &kp MINUS     &trans        &trans        &trans             &trans                       &trans          &trans                                                               &kp DOUBLE_QUOTES
+&kp RIGHT_BRACKET           &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp BACKSLASH                                  &kp LEFT_BRACKET  &kp LEFT_BRACKET  &kp 0x89      &kp MINUS        &kp EQUAL
+&kp N0                      &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp DOUBLE_QUOTES  &trans      &kp UNDERSCORE  &kp LEFT_ARROW    &kp DOWN_ARROW    &kp UP_ARROW  &kp RIGHT_ARROW  &kp SEMICOLON
+&mt LEFT_SHIFT KP_NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp UNDER          &trans      &trans          &kp HOME          &kp PAGE_DOWN     &kp PAGE_UP   &kp END          &kp LS(0x87)
+&trans                      &kp MINUS     &trans        &trans        &trans             &trans      &trans          &trans                                                             &kp DOUBLE_QUOTES
             >;
         };
 
         IPAD_SYMBOL {
             bindings = <
-&kp RIGHT_BRACE  &kp AMPERSAND    &kp ASTERISK       &kp LEFT_PARENTHESIS  &kp PIPE                           &kp RIGHT_BRACKET  &kp LEFT_BRACE    &kp LS(0x89)  &kp UNDER  &kp PLUS
-&kp LEFT_SHIFT   &kp DOLLAR       &kp PERCENT        &kp CARET             &kp MINUS      &trans      &trans  &kp BACKSLASH      &kp DOUBLE_QUOTES &kp LEFT_BRACKET &kp 0x89   &kp SEMICOLON
-&kp PLUS         &kp EXCLAMATION  &kp AT             &kp HASH              &kp UNDER      &trans      &trans  &kp EQUAL          &kp LS(0x87)      &trans        &trans     &trans
-&trans           &trans           &trans             &trans                &trans         &trans      &trans  &trans                                                      &trans
+&kp RIGHT_BRACE  &kp AMPERSAND    &kp ASTERISK  &kp LEFT_PARENTHESIS  &kp PIPE                       &kp RIGHT_BRACKET  &kp LEFT_BRACE     &kp LS(0x89)      &kp UNDER  &kp PLUS
+&kp LEFT_SHIFT   &kp DOLLAR       &kp PERCENT   &kp CARET             &kp MINUS  &trans      &trans  &kp BACKSLASH      &kp DOUBLE_QUOTES  &kp LEFT_BRACKET  &kp 0x89   &kp SEMICOLON
+&kp PLUS         &kp EXCLAMATION  &kp AT        &kp HASH              &kp UNDER  &trans      &trans  &kp EQUAL          &kp LS(0x87)       &trans            &trans     &trans
+&trans           &trans           &trans        &trans                &trans     &trans      &trans  &trans                                                             &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
