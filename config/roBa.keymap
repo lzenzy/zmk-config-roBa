@@ -137,6 +137,7 @@
             label = "QQ_ESC_LANG2";
             #binding-cells = <0>;
             bindings = <&kp Q>, <&kp LANGUAGE_2>, <&kp LANGUAGE_2>;
+
             tapping-term-ms = <300>;
         };
     };
@@ -146,10 +147,10 @@
 
         default_layer {
             bindings = <
-&qq_esc_lang2     &kp W         &kp E         &kp R                    &kp T                                                                 &kp Y        &kp U  &lt 4 I      &kp O    &kp P
-&mt LEFT_SHIFT A  &kp S         &kp D         &kp F                    &kp G             &esc_lang2                &kp K_VOLUME_UP           &kp H        &kp J  &kp K        &kp L    &mt RSHIFT SEMICOLON
-&mt LSHIFT Z      &kp X         &kp C         &kp V                    &kp B             &lt_to_layer_0 6 TAB      &mt K_MUTE K_VOLUME_DOWN  &kp N        &kp M  &lt 5 COMMA  &kp DOT  &mt RSHIFT SLASH
-&kp LCTRL         &lt 1 K_MUTE  &kp LEFT_WIN  &mt LEFT_ALT LANGUAGE_2  &lt 2 LANGUAGE_2  &lt 3 BSPC                &kp SPACE                 &lt 2 LANGUAGE_1                             &lt 4 ENTER
+&qq_esc_lang2     &kp W         &kp E         &kp R                    &kp T                                                                 &kp Y             &kp U  &lt 4 I      &kp O    &kp P
+&mt LEFT_SHIFT A  &kp S         &kp D         &kp F                    &kp G             &esc_lang2                &kp K_VOLUME_UP           &kp H             &kp J  &kp K        &kp L    &mt RSHIFT SEMICOLON
+&mt LSHIFT Z      &kp X         &kp C         &kp V                    &kp B             &lt_to_layer_0 6 TAB      &mt K_MUTE K_VOLUME_DOWN  &kp N             &kp M  &lt 5 COMMA  &kp DOT  &mt RSHIFT SLASH
+&kp LCTRL         &lt 1 K_MUTE  &kp LEFT_WIN  &mt LEFT_ALT LANGUAGE_2  &lt 2 LANGUAGE_2  &lt 3 BSPC                &kp SPACE                 &lt 2 LANGUAGE_1                               &lt 4 ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -202,7 +203,7 @@
             >;
         };
 
-        layer_6 {
+        CONFIG {
             bindings = <
 &trans  &trans        &trans        &trans        &trans                           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
 &trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans        &trans        &trans        &sjis_toggle  &apple_toggle
@@ -213,24 +214,33 @@
 
         APPLE {
             bindings = <
-&trans  &trans  &trans         &trans                    &trans                      &trans  &trans  &trans       &trans  &trans
-&trans  &trans  &trans         &trans                    &trans  &trans      &trans  &trans  &trans  &trans       &trans  &trans
-&trans  &trans  &trans         &trans                    &trans  &trans      &trans  &trans  &trans  &lt 5 COMMA  &trans  &trans
-&trans  &trans  &kp APPLE_OPT  &mt APPLE_CMD LANGUAGE_2  &trans  &trans      &trans  &trans                               &trans
+&trans  &trans  &trans                       &trans                       &trans                      &trans  &trans  &trans       &trans  &trans
+&trans  &trans  &trans                       &trans                       &trans  &trans      &trans  &trans  &trans  &trans       &trans  &trans
+&trans  &trans  &trans                       &trans                       &trans  &trans      &trans  &trans  &trans  &lt 5 COMMA  &trans  &trans
+&trans  &trans  &mt LEFT_COMMAND LANGUAGE_2  &mt LEFT_COMMAND LANGUAGE_2  &trans  &trans      &trans  &trans                               &trans
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
 
-        SJIS {
+        IPAD {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans       &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans       &trans  &mt RSHIFT JP_COLON
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &lt 5 COMMA  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                               &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &kp AT_SIGN  &kp BACKSLASH  &kp MINUS  &kp CARET
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans       &trans         &trans     &kp SEMICOLON
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans       &lt 5 COMMA    &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                         &trans
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
+        };
+
+        IPAD_SYMBOL {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &kp GRAVE  &kp PIPE  &kp EQUAL  &kp TILDE
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans     &trans    &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans     &trans    &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                  &trans
+            >;
         };
     };
 };
