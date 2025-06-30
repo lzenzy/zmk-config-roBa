@@ -94,7 +94,7 @@
         };
 
         sjis_mode_toggle {
-            bindings = <&sjis_toggle>;
+            bindings = <&ipad_toggle>;
             key-positions = <1 8>;
         };
     };
@@ -114,11 +114,25 @@
             label = "APPLE_TOGGLE";
         };
 
-        sjis_toggle: sjis_toggle {
+        ipad_toggle: sjis_toggle {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&tog 8>;
             label = "SJIS_TOGGLE";
+        };
+
+        Mac: Mac {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 0 &lt_to_layer_0 7 0>;
+            label = "MAC";
+        };
+
+        iPad: iPad {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 1 &lt_to_layer_0 8 0>;
+            label = "IPAD";
         };
     };
 
@@ -205,10 +219,10 @@
 
         CONFIG {
             bindings = <
-&trans  &trans        &trans        &trans        &trans                           &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans        &trans        &trans        &sjis_toggle  &apple_toggle
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans      &bootloader  &trans        &trans        &trans        &trans        &bt BT_CLR
-&trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans                                                  &bt BT_CLR_ALL
+&trans  &trans        &trans        &trans        &trans                           &Mac    &iPad   &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans  &trans  &trans        &ipad_toggle  &apple_toggle
+&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &trans      &bootloader  &trans  &trans  &trans        &trans        &bt BT_CLR
+&trans  &trans        &trans        &trans        &trans  &trans      &trans       &trans                                      &bt BT_CLR_ALL
             >;
         };
 
@@ -224,6 +238,15 @@
         };
 
         IPAD {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+            >;
+        };
+
+        IPAD_NUM_ARROW {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &kp AT_SIGN  &kp BACKSLASH  &kp MINUS  &kp CARET
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans       &trans         &trans     &kp SEMICOLON
@@ -241,6 +264,20 @@
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans     &trans    &trans     &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                  &trans
             >;
+        };
+    };
+
+    conditional_layers {
+        compatible = "zmk,conditional-layers";
+
+        iPad_numarrow {
+            if-layers = <8 2>;
+            then-layer = <9>;
+        };
+
+        iPad_symbol {
+            if-layers = <8 3>;
+            then-layer = <10>;
         };
     };
 };
