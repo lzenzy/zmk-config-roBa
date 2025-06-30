@@ -136,6 +136,30 @@
 
             label = "IPAD";
         };
+
+        bt_2: bt_other {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 2>, <&macro_wait_time 100>, <&to 0>;
+
+            label = "BT_OTHER";
+        };
+
+        bt_3: bt_3 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 3>, <&macro_wait_time 100>, <&to 0>;
+
+            label = "BT_3";
+        };
+
+        bt_4: bt_4 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&bt BT_SEL 4>, <&macro_wait_time 100>, <&to 0>;
+
+            label = "BT_4";
+        };
     };
 
     behaviors {
@@ -152,7 +176,16 @@
             compatible = "zmk,behavior-tap-dance";
             label = "QQ_ESC_LANG2";
             #binding-cells = <0>;
-            bindings = <&kp Q>, <&kp LANGUAGE_2>, <&kp LANGUAGE_2>;
+            bindings = <&kp Q>, <&esc_lang2>, <&esc_lang2>;
+
+            tapping-term-ms = <300>;
+        };
+
+        ent_ent_mouse: ent_ent_mouse {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ENT_ENT_MOUSE";
+            #binding-cells = <0>;
+            bindings = <&kp RET>, <&tog 4>;
 
             tapping-term-ms = <300>;
         };
@@ -241,10 +274,10 @@
 
         IPAD {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans       &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans       &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &lt 5 COMMA  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                               &trans
             >;
         };
 
@@ -261,10 +294,10 @@
 
         IPAD_SYMBOL {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &kp GRAVE  &kp PIPE  &kp EQUAL  &kp TILDE
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans     &trans    &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans     &trans    &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                  &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &kp GRAVE  &kp PIPE     &kp EQUAL  &kp TILDE
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans     &trans       &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans     &lt 5 COMMA  &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                     &trans
             >;
         };
     };
