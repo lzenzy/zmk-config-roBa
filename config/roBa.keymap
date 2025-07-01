@@ -257,7 +257,7 @@
 &trans  &trans  &trans                       &trans                       &trans                            &trans  &trans  &trans        &trans  &trans
 &trans  &trans  &trans                       &trans                       &trans  &trans      &kp NUMBER_6  &trans  &trans  &trans        &trans  &trans
 &trans  &trans  &trans                       &trans                       &trans  &trans      &trans        &trans  &trans  &lt 10 COMMA  &trans  &trans
-&trans  &trans  &mt LEFT_COMMAND LANGUAGE_2  &mt LEFT_COMMAND LANGUAGE_2  &trans  &trans      &trans        &trans                                &trans
+&trans  &trans  &mt LS(LEFT_ALT) LANGUAGE_2  &mt LEFT_COMMAND LANGUAGE_2  &trans  &trans      &trans        &trans                                &trans
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
