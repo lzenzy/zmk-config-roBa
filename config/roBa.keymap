@@ -197,7 +197,7 @@
         default_layer {
             bindings = <
 &qq_esc_lang2     &kp W         &kp E         &kp R                    &kp T                                                                 &kp Y             &kp U  &lt 4 I      &kp O    &kp P
-&mt LEFT_SHIFT A  &kp S         &kp D         &kp F                    &kp G             &esc_lang2                &kp K_VOLUME_UP           &kp H             &kp J  &kp K        &kp L    &mt RSHIFT SEMICOLON
+&mt LEFT_SHIFT A  &kp S         &kp D         &kp F                    &kp G             &esc_lang2                &kp N0                    &kp H             &kp J  &kp K        &kp L    &mt RSHIFT SEMICOLON
 &mt LSHIFT Z      &kp X         &kp C         &kp V                    &kp B             &lt_to_layer_0 6 TAB      &mt K_MUTE K_VOLUME_DOWN  &kp N             &kp M  &lt 5 COMMA  &kp DOT  &mt RSHIFT SLASH
 &kp LCTRL         &lt 1 K_MUTE  &kp LEFT_WIN  &mt LEFT_ALT LANGUAGE_2  &lt 2 LANGUAGE_2  &lt 3 BSPC                &kp SPACE                 &lt 2 LANGUAGE_1                               &lt 4 ENTER
             >;
@@ -208,7 +208,7 @@
         FUNCTION {
             bindings = <
 &trans   &kp F7  &kp F8  &kp F9  &trans                                        &kp PRINTSCREEN    &kp F17  &kp F18  &kp F19  &kp C_PLAY_PAUSE
-&kp F10  &kp F4  &kp F5  &kp F6  &trans  &trans      &kp C_VOLUME_UP           &kp C_VOLUME_DOWN  &kp F14  &kp F15  &kp F16  &kp PAGE_UP
+&kp F10  &kp F4  &kp F5  &kp F6  &trans  &trans      &kp NUMBER_1              &kp C_VOLUME_DOWN  &kp F14  &kp F15  &kp F16  &kp PAGE_UP
 &trans   &kp F1  &kp F2  &kp F3  &trans  &trans      &mt K_MUTE C_VOLUME_DOWN  &trans             &kp F11  &kp F12  &kp F13  &kp PAGE_DOWN
 &trans   &trans  &trans  &trans  &trans  &trans      &trans                    &trans                                        &kp RCTRL
             >;
@@ -216,19 +216,19 @@
 
         NUM_ARROW {
             bindings = <
-&kp JP_LBRACKET             &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp JP_RBRACKET                                       &kp JP_AT       &kp JP_AT       &kp JP_YEN    &kp MINUS        &kp JP_CARET
-&kp N0                      &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp JP_ASTERISK  &kp KP_NUMBER_0      &kp UNDERSCORE  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp SEMICOLON
-&mt LEFT_SHIFT KP_NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp JP_EQUAL     &kp PLUS             &trans          &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END          &kp JP_UNDERSCORE
-&trans                      &kp MINUS     &trans        &trans        &trans           &trans               &trans          &trans                                                         &kp JP_ASTERISK
+&kp JP_LBRACKET             &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp JP_RBRACKET                                     &kp JP_AT       &kp JP_AT       &kp JP_YEN    &kp MINUS        &kp JP_CARET
+&kp N0                      &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp JP_ASTERISK  &kp KP_NUMBER_0      &kp NUMBER_2  &kp LEFT_ARROW  &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp SEMICOLON
+&mt LEFT_SHIFT KP_NUMBER_0  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp JP_EQUAL     &kp PLUS             &trans        &kp HOME        &kp PAGE_DOWN   &kp PAGE_UP   &kp END          &kp JP_UNDERSCORE
+&trans                      &kp MINUS     &trans        &trans        &trans           &trans               &trans        &trans                                                         &kp JP_ASTERISK
             >;
         };
 
         SYMBOL {
             bindings = <
-&kp JP_LBRACE   &kp JP_QUOTE     &kp JP_LPAREN  &kp JP_RPAREN     &kp JP_RBRACE                      &kp JP_LBRACKET  &kp JP_BACKQUOTE   &kp JP_PIPE  &kp JP_EQUAL  &kp JP_TILDE
-&kp LEFT_SHIFT  &kp DOLLAR       &kp PERCENT    &kp JP_AMPERSAND  &kp MINUS      &trans      &trans  &kp JP_RBRACKET  &kp JP_ASTERISK    &kp JP_AT    &kp JP_YEN    &kp SEMICOLON
-&kp PLUS        &kp EXCLAMATION  &kp JP_DQUOTE  &kp HASH          &kp JP_EQUAL   &trans      &trans  &kp JP_CARET     &kp JP_UNDERSCORE  &trans       &trans        &trans
-&trans          &trans           &trans         &trans            &trans         &trans      &trans  &trans                                                         &trans
+&kp JP_LBRACE   &kp JP_QUOTE     &kp JP_LPAREN  &kp JP_RPAREN     &kp JP_RBRACE                            &kp JP_LBRACKET  &kp JP_BACKQUOTE   &kp JP_PIPE  &kp JP_EQUAL  &kp JP_TILDE
+&kp LEFT_SHIFT  &kp DOLLAR       &kp PERCENT    &kp JP_AMPERSAND  &kp MINUS      &trans      &kp NUMBER_3  &kp JP_RBRACKET  &kp JP_ASTERISK    &kp JP_AT    &kp JP_YEN    &kp SEMICOLON
+&kp PLUS        &kp EXCLAMATION  &kp JP_DQUOTE  &kp HASH          &kp JP_EQUAL   &trans      &trans        &kp JP_CARET     &kp JP_UNDERSCORE  &trans       &trans        &trans
+&trans          &trans           &trans         &trans            &trans         &trans      &trans        &trans                                                         &trans
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
@@ -236,17 +236,17 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans    &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &to 0       &trans  &trans  &mkp MB1  &mkp MB2  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &to 5     &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                              &trans
+&trans  &trans  &trans  &trans  &trans                            &trans  &trans    &trans    &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &to 0       &kp NUMBER_4  &trans  &mkp MB1  &mkp MB2  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans        &trans  &trans    &to 5     &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans        &trans                              &trans
             >;
         };
 
         SCROLL {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &to 0       &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &to 0       &kp N5  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &kp N5      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
             >;
@@ -254,17 +254,17 @@
 
         CONFIG {
             bindings = <
-&trans  &trans        &trans        &trans        &trans                                 &bt_Mac  &bt_iPad  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
-&trans  &trans        &trans        &trans        &trans  &trans            &trans       &trans   &trans    &trans        &ipad_toggle  &apple_toggle
-&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &kp NUMBER_6      &bootloader  &trans   &trans    &trans        &trans        &bt BT_CLR
-&trans  &trans        &trans        &trans        &trans  &trans            &trans       &trans                                         &bt BT_CLR_ALL
+&trans  &trans        &trans        &trans        &trans                                  &bt_Mac  &bt_iPad  &bt BT_SEL 2  &bt BT_SEL 3  &bt BT_SEL 4
+&trans  &trans        &trans        &trans        &trans  &trans            &kp NUMBER_6  &trans   &trans    &trans        &ipad_toggle  &apple_toggle
+&trans  &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &trans  &kp NUMBER_6      &bootloader   &trans   &trans    &trans        &trans        &bt BT_CLR
+&trans  &trans        &trans        &trans        &trans  &trans            &trans        &trans                                         &bt BT_CLR_ALL
             >;
         };
 
         APPLE {
             bindings = <
 &trans  &trans  &trans                       &trans                       &trans                      &trans  &trans  &trans       &trans  &trans
-&trans  &trans  &trans                       &trans                       &trans  &trans      &trans  &trans  &trans  &trans       &trans  &trans
+&trans  &trans  &trans                       &trans                       &trans  &trans      &kp N7  &trans  &trans  &trans       &trans  &trans
 &trans  &trans  &trans                       &trans                       &trans  &kp N7      &trans  &trans  &trans  &lt 5 COMMA  &trans  &trans
 &trans  &trans  &mt LEFT_COMMAND LANGUAGE_2  &mt LEFT_COMMAND LANGUAGE_2  &trans  &trans      &trans  &trans                               &trans
             >;
@@ -275,7 +275,7 @@
         IPAD {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans       &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans       &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &kp N8  &trans  &trans  &trans       &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &kp N8      &trans  &trans  &trans  &lt 5 COMMA  &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                               &trans
             >;
@@ -284,7 +284,7 @@
         IPAD_NUM_ARROW {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &kp AT_SIGN  &kp BACKSLASH  &kp MINUS  &kp CARET
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans       &trans         &trans     &kp SEMICOLON
+&trans  &trans  &trans  &trans  &trans  &trans      &kp N9  &trans  &trans       &trans         &trans     &kp SEMICOLON
 &trans  &trans  &trans  &trans  &trans  &kp N9      &trans  &trans  &trans       &lt 5 COMMA    &trans     &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                         &trans
             >;
@@ -294,10 +294,10 @@
 
         IPAD_SYMBOL {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &kp GRAVE  &kp PIPE     &kp EQUAL  &kp TILDE
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans     &trans       &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &kp N0      &trans  &trans  &trans     &lt 5 COMMA  &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                     &trans
+&trans  &trans  &trans  &trans  &trans                         &trans  &kp GRAVE  &kp PIPE     &kp EQUAL  &kp TILDE
+&trans  &trans  &trans  &trans  &trans  &trans      &kp LS(J)  &trans  &trans     &trans       &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &kp N0      &trans     &trans  &trans     &lt 5 COMMA  &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans     &trans                                     &trans
             >;
         };
     };
