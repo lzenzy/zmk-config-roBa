@@ -110,21 +110,21 @@
         apple_toggle: apple_toggle {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tog 7>;
+            bindings = <&tog 6>;
             label = "APPLE_TOGGLE";
         };
 
         ipad_toggle: sjis_toggle {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tog 8>;
+            bindings = <&tog 7>;
             label = "SJIS_TOGGLE";
         };
 
         bt_Mac: Mac {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 0>, <&macro_wait_time 100>, <&to 7>;
+            bindings = <&bt BT_SEL 0>, <&macro_wait_time 100>, <&to 6>;
 
             label = "MAC";
         };
@@ -132,7 +132,7 @@
         bt_iPad: iPad {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 1>, <&macro_wait_time 100>, <&to 8>;
+            bindings = <&bt BT_SEL 1>, <&macro_wait_time 100>, <&to 7>;
 
             label = "IPAD";
         };
@@ -148,7 +148,7 @@
         bt_3: bt_3 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 3>, <&macro_wait_time 100>, <&to 0>;
+            bindings = <&bt BT_SEL 3>, <&macro_wait_time 100>, <&tog 0>;
 
             label = "BT_3";
         };
@@ -196,10 +196,10 @@
 
         default_layer {
             bindings = <
-&qq_esc_lang2     &kp W         &kp E         &kp R                    &kp T                                                                 &kp Y             &kp U  &lt 4 I      &kp O    &kp P
-&mt LEFT_SHIFT A  &kp S         &kp D         &kp F                    &kp G             &esc_lang2                &kp N0                    &kp H             &kp J  &kp K        &kp L    &mt RSHIFT SEMICOLON
-&mt LSHIFT Z      &kp X         &kp C         &kp V                    &kp B             &lt_to_layer_0 6 TAB      &mt K_MUTE K_VOLUME_DOWN  &kp N             &kp M  &lt 5 COMMA  &kp DOT  &mt RSHIFT SLASH
-&kp LCTRL         &lt 1 K_MUTE  &kp LEFT_WIN  &mt LEFT_ALT LANGUAGE_2  &lt 2 LANGUAGE_2  &lt 3 BSPC                &kp SPACE                 &lt 2 LANGUAGE_1                               &lt 4 ENTER
+&qq_esc_lang2     &kp W         &kp E         &kp R                    &kp T                                                                 &kp Y             &kp U  &lt 4 I       &kp O    &kp P
+&mt LEFT_SHIFT A  &kp S         &kp D         &kp F                    &kp G             &esc_lang2                &kp N0                    &kp H             &kp J  &kp K         &kp L    &mt RSHIFT SEMICOLON
+&mt LSHIFT Z      &kp X         &kp C         &kp V                    &kp B             &lt_to_layer_0 5 TAB      &mt K_MUTE K_VOLUME_DOWN  &kp N             &kp M  &lt 10 COMMA  &kp DOT  &mt RSHIFT SLASH
+&kp LCTRL         &lt 1 K_MUTE  &kp LEFT_WIN  &mt LEFT_ALT LANGUAGE_2  &lt 2 LANGUAGE_2  &lt 3 BSPC                &kp SPACE                 &lt 2 LANGUAGE_1                                &lt 4 ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -236,37 +236,28 @@
 
         MOUSE {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                            &trans  &trans    &trans       &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &to 0       &kp NUMBER_4  &trans  &mkp MB1  &mkp MB2     &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans        &trans  &trans    &lt 5 COMMA  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans        &trans                                 &trans
-            >;
-        };
-
-        SCROLL {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &to 0       &kp N5  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                          &trans
+&trans  &trans  &trans  &trans  &trans                            &trans  &trans    &trans        &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &to 0       &kp NUMBER_4  &trans  &mkp MB1  &mkp MB2      &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans        &trans  &trans    &lt 10 COMMA  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans        &trans                                  &trans
             >;
         };
 
         CONFIG {
             bindings = <
-&trans  &trans   &trans    &trans  &trans                            &bt_Mac  &bt_iPad  &bt_2   &bt_3         &bt_4
-&trans  &trans   &trans    &trans  &trans  &trans      &kp NUMBER_6  &trans   &trans    &trans  &ipad_toggle  &apple_toggle
-&trans  &bt_Mac  &bt_iPad  &bt_2   &bt_4   &trans      &bootloader   &trans   &trans    &trans  &trans        &bt BT_CLR
-&trans  &trans   &trans    &trans  &trans  &trans      &trans        &trans                                   &bt BT_CLR_ALL
+&trans  &trans  &trans  &trans  &trans                           &bt_Mac  &bt_iPad  &bt_2   &bt_3         &bt_4
+&trans  &trans  &trans  &trans  &trans  &trans      &kp N5       &trans   &trans    &trans  &ipad_toggle  &apple_toggle
+&trans  &trans  &trans  &trans  &trans  &trans      &bootloader  &trans   &trans    &trans  &trans        &bt BT_CLR
+&trans  &trans  &trans  &trans  &trans  &trans      &trans       &trans                                   &bt BT_CLR_ALL
             >;
         };
 
         APPLE {
             bindings = <
-&trans  &trans  &trans                       &trans                       &trans                      &trans  &trans  &trans       &trans  &trans
-&trans  &trans  &trans                       &trans                       &trans  &trans      &kp N7  &trans  &trans  &trans       &trans  &trans
-&trans  &trans  &trans                       &trans                       &trans  &trans      &trans  &trans  &trans  &lt 5 COMMA  &trans  &trans
-&trans  &trans  &mt LEFT_COMMAND LANGUAGE_2  &mt LEFT_COMMAND LANGUAGE_2  &trans  &trans      &trans  &trans                               &trans
+&trans  &trans  &trans                       &trans                       &trans                            &trans  &trans  &trans        &trans  &trans
+&trans  &trans  &trans                       &trans                       &trans  &trans      &kp NUMBER_6  &trans  &trans  &trans        &trans  &trans
+&trans  &trans  &trans                       &trans                       &trans  &trans      &trans        &trans  &trans  &lt 10 COMMA  &trans  &trans
+&trans  &trans  &mt LS(LEFT_ALT) LANGUAGE_2  &mt LEFT_COMMAND LANGUAGE_2  &trans  &trans      &trans        &trans                                &trans
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -274,18 +265,18 @@
 
         IPAD {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans       &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &kp N8  &trans  &trans  &trans       &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &lt 5 COMMA  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                               &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans  &trans        &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &kp N7  &trans  &trans  &trans        &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans  &lt 10 COMMA  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                &trans
             >;
         };
 
         IPAD_NUM_ARROW {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                      &trans  &kp AT_SIGN  &kp BACKSLASH  &kp MINUS  &kp CARET
-&trans  &trans  &trans  &trans  &trans  &trans      &kp N9  &trans  &trans       &trans         &trans     &kp SEMICOLON
-&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans       &lt 5 COMMA    &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &kp N8  &trans  &trans       &trans         &trans     &kp SEMICOLON
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans       &lt 10 COMMA   &trans     &trans
 &trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                         &trans
             >;
 
@@ -294,10 +285,19 @@
 
         IPAD_SYMBOL {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                         &trans  &kp GRAVE  &kp PIPE     &kp EQUAL  &kp TILDE
-&trans  &trans  &trans  &trans  &trans  &trans      &kp LS(J)  &trans  &trans     &trans       &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans     &trans  &trans     &lt 5 COMMA  &trans     &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans     &trans                                     &trans
+&trans  &trans  &trans  &trans  &trans                          &trans  &kp GRAVE  &kp PIPE      &kp EQUAL  &kp TILDE
+&trans  &trans  &trans  &trans  &trans  &trans      &kp LS(N9)  &trans  &trans     &trans        &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans  &trans     &lt 10 COMMA  &trans     &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans      &trans                                      &trans
+            >;
+        };
+
+        SCROLL {
+            bindings = <
+&trans  &trans   &trans    &trans  &trans                      &trans  &trans  &trans  &trans  &trans
+&trans  &bt_3    &bt_4     &trans  &trans  &to 0       &kp S   &trans  &trans  &trans  &trans  &trans
+&trans  &bt_Mac  &bt_iPad  &bt_2   &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &trans   &trans    &trans  &trans  &trans      &trans  &trans                          &trans
             >;
         };
     };
@@ -306,13 +306,13 @@
         compatible = "zmk,conditional-layers";
 
         iPad_numarrow {
-            if-layers = <8 2>;
-            then-layer = <9>;
+            if-layers = <7 2>;
+            then-layer = <8>;
         };
 
         iPad_symbol {
-            if-layers = <8 3>;
-            then-layer = <10>;
+            if-layers = <7 3>;
+            then-layer = <9>;
         };
     };
 };
