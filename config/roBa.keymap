@@ -124,7 +124,7 @@
         bt_Mac: Mac {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 0>, <&macro_wait_time 100>, <&tog 6>;
+            bindings = <&bt BT_SEL 0>, <&macro_wait_time 100>, <&to 6>;
 
             label = "MAC";
         };
@@ -132,7 +132,7 @@
         bt_iPad: iPad {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 1>, <&macro_wait_time 100>, <&tog 7>;
+            bindings = <&bt BT_SEL 1>, <&macro_wait_time 100>, <&to 7>;
 
             label = "IPAD";
         };
@@ -140,7 +140,7 @@
         bt_2: bt_other {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 2>, <&macro_wait_time 100>, <&tog 0>;
+            bindings = <&bt BT_SEL 2>, <&macro_wait_time 100>, <&to 0>;
 
             label = "BT_OTHER";
         };
@@ -156,7 +156,7 @@
         bt_4: bt_4 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 4>, <&macro_wait_time 100>, <&tog 0>;
+            bindings = <&bt BT_SEL 4>, <&macro_wait_time 100>, <&to 0>;
 
             label = "BT_4";
         };
