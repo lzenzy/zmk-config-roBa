@@ -102,7 +102,7 @@
             key-positions = <0 9>;
         };
 
-        sjis_mode_toggle {
+        ipad_mode_toggle {
             bindings = <&ipad_toggle>;
             key-positions = <1 8>;
         };
@@ -195,6 +195,7 @@
             label = "ENT_ENT_MOUSE";
             #binding-cells = <0>;
             bindings = <&kp RET>, <&tog 4>;
+
             tapping-term-ms = <300>;
         };
     };
@@ -204,10 +205,10 @@
 
         default_layer {
             bindings = <
-&qq_esc_lang2     &kp W         &kp E         &kp R                    &kp T                                                                 &kp Y             &kp U  &lt 4 I       &kp O    &kp P
-&mt LEFT_SHIFT A  &kp S         &kp D         &kp F                    &kp G             &esc_lang2                &kp N0                    &kp H             &kp J  &kp K         &kp L    &mt RSHIFT JP_COLON
-&mt LSHIFT Z      &kp X         &kp C         &kp V                    &kp B             &lt_to_layer_0 5 TAB      &mt K_MUTE K_VOLUME_DOWN  &kp N             &kp M  &lt 10 COMMA  &kp DOT  &mt RSHIFT SLASH
-&kp LCTRL         &lt 1 K_MUTE  &kp LEFT_WIN  &mt LEFT_ALT LANGUAGE_2  &lt 2 LANGUAGE_2  &lt 3 BSPC                &kp SPACE                 &lt 2 LANGUAGE_1                                &lt 4 ENTER
+&qq_esc_lang2     &kp W         &kp E         &kp R                    &kp T                                                                 &kp Y             &kp U  &lt 4 I       &kp O          &kp P
+&mt LEFT_SHIFT A  &kp S         &kp D         &kp F                    &kp G             &esc_lang2                &kp N0                    &kp H             &kp J  &kp K         &kp L          &mt RSHIFT JP_COLON
+&mt LSHIFT Z      &kp X         &kp C         &kp V                    &kp B             &lt_to_layer_0 5 TAB      &mt K_MUTE K_VOLUME_DOWN  &kp N             &kp M  &lt 10 COMMA  &mt RCTRL DOT  &mt RSHIFT SLASH
+&kp LCTRL         &lt 1 K_MUTE  &kp LEFT_WIN  &mt LEFT_ALT LANGUAGE_2  &lt 2 LANGUAGE_2  &lt 3 BSPC                &lt 5 SPACE               &lt 2 LANGUAGE_1                                      &lt 4 ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -215,10 +216,10 @@
 
         FUNCTION {
             bindings = <
-&trans   &kp F7  &kp F8  &kp F9  &trans                                        &kp PRINTSCREEN    &kp F17  &kp F18  &kp F19  &kp C_PLAY_PAUSE
-&kp F10  &kp F4  &kp F5  &kp F6  &trans  &trans      &kp NUMBER_1              &kp C_VOLUME_DOWN  &kp F14  &kp F15  &kp F16  &kp PAGE_UP
-&trans   &kp F1  &kp F2  &kp F3  &trans  &trans      &mt K_MUTE C_VOLUME_DOWN  &trans             &kp F11  &kp F12  &kp F13  &kp PAGE_DOWN
-&trans   &trans  &trans  &trans  &trans  &trans      &trans                    &trans                                        &trans
+&trans   &kp F7  &kp F8  &kp F9  &trans                                                 &kp PRINTSCREEN    &kp F17  &kp F18  &kp F19  &kp C_PLAY_PAUSE
+&kp F10  &kp F4  &kp F5  &kp F6  &trans  &kp PRINTSCREEN      &kp NUMBER_1              &kp C_VOLUME_DOWN  &kp F14  &kp F15  &kp F16  &kp PAGE_UP
+&trans   &kp F1  &kp F2  &kp F3  &trans  &trans               &mt K_MUTE C_VOLUME_DOWN  &trans             &kp F11  &kp F12  &kp F13  &kp PAGE_DOWN
+&trans   &trans  &trans  &trans  &trans  &trans               &trans                    &trans                                        &trans
             >;
         };
 
@@ -242,7 +243,7 @@
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
         };
 
-        SETTINGS {
+        Mouse {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                            &trans  &trans    &trans        &trans  &trans
 &trans  &trans  &trans  &trans  &trans  &to 0       &kp NUMBER_4  &trans  &mkp MB1  &mkp MB2      &trans  &trans
@@ -253,10 +254,10 @@
 
         CONFIG {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                           &bt_Mac  &bt_iPad  &bt_2   &bt_3         &bt_4
-&trans  &trans  &trans  &trans  &trans  &trans      &kp N5       &trans   &trans    &trans  &ipad_toggle  &apple_toggle
-&trans  &trans  &trans  &trans  &trans  &trans      &bootloader  &trans   &trans    &trans  &trans        &bt BT_CLR
-&trans  &trans  &trans  &trans  &trans  &trans      &trans       &trans                                   &bt BT_CLR_ALL
+&trans  &trans  &trans  &trans  &trans                                       &bt_Mac                      &bt_iPad  &bt_2   &bt_3         &bt_4
+&trans  &trans  &trans  &trans  &trans  &trans      &kp C_VOL_UP             &kp C_AC_ZOOM_IN             &trans    &trans  &ipad_toggle  &apple_toggle
+&trans  &trans  &trans  &trans  &trans  &trans      &mt LS(K_MUTE) C_VOL_DN  &mt C_AC_ZOOM C_AC_ZOOM_OUT  &trans    &trans  &trans        &bt BT_CLR
+&trans  &trans  &trans  &trans  &trans  &trans      &trans                   &trans                                                       &bt BT_CLR_ALL
             >;
         };
 
