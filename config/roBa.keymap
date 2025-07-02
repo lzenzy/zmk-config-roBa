@@ -207,7 +207,7 @@
             bindings = <
 &qq_esc_lang2     &kp W         &kp E         &kp R                    &kp T                                                       &kp Y             &kp U  &lt 4 I       &kp O          &kp P
 &mt LEFT_SHIFT A  &kp S         &kp D         &kp F                    &kp G             &trans                    &trans          &kp H             &kp J  &kp K         &kp L          &mt RSHIFT JP_COLON
-&mt LSHIFT Z      &kp X         &kp C         &kp V                    &kp B             &lt_to_layer_0 5 TAB      &trans          &kp N             &kp M  &lt 10 COMMA  &mt RCTRL DOT  &mt RSHIFT SLAS H
+&mt LSHIFT Z      &kp X         &kp C         &kp V                    &kp B             &lt 5 =      &trans          &kp N             &kp M  &lt 10 COMMA  &mt RCTRL DOT  &mt RSHIFT SLAS H
 &kp LCTRL         &lt 1 K_MUTE  &kp LEFT_WIN  &mt LEFT_ALT LANGUAGE_2  &lt 2 LANGUAGE_2  &lt 3 BSPC                &lt 5 SPACE     &lt 2 LANGUAGE_2                                      &lt 4 ENTER
             >;
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
