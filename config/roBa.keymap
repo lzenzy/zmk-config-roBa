@@ -119,7 +119,7 @@
         apple_toggle: apple_toggle {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tog 7>;
+            bindings = <&tog 8>;
             label = "APPLE_TOGGLE";
         };
 
@@ -133,7 +133,7 @@
         bt_Mac: Mac {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 0>, <&macro_wait_time 100>, <&to 7>;
+            bindings = <&bt BT_SEL 0>, <&macro_wait_time 100>, <&to 8>;
 
             label = "MAC";
         };
@@ -194,7 +194,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "ENT_ENT_MOUSE";
             #binding-cells = <0>;
-            bindings = <&kp RET>, <&tog 8>;
+            bindings = <&kp RET>, <&tog 10>;
 
             tapping-term-ms = <300>;
         };
@@ -205,10 +205,10 @@
 
         default_layer {
             bindings = <
-&qq_esc_lang2     &kp W         &kp E         &kp R                    &kp T                                                 &kp Y        &kp U  &lt 8 I       &kp O          &kp P
+&qq_esc_lang2     &kp W         &kp E         &kp R                    &kp T                                                 &kp Y        &kp U  &lt 9 I       &kp O          &kp P
 &mt LEFT_SHIFT A  &kp S         &kp D         &kp F                    &kp G               &kp JP_LBRACKET      &kp JP_PLUS  &kp H        &kp J  &kp K         &kp L          &mt RSHIFT JP_COLON
 &mt LSHIFT Z      &kp X         &kp C         &kp V                    &kp B               &kp JP_RBRACKET      &kp MINUS    &kp N        &kp M  &lt 10 COMMA  &mt RCTRL DOT  &mt RSHIFT SLASH
-&kp LCTRL         &lt 8 K_MUTE  &kp LEFT_WIN  &mt LEFT_ALT LANGUAGE_2  &lt_to_layer_0 1 0  &lt 2 BSPC           &lt 3 SPACE  &lt 1 LANG1                                      &lt 9 ENTER
+&kp LCTRL         &lt 7 K_MUTE  &kp LEFT_WIN  &mt LEFT_ALT LANGUAGE_2  &lt_to_layer_0 1 0  &lt 2 BSPC           &lt 6 SPACE  &lt 1 LANG1                                      &lt 9 ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -263,17 +263,6 @@
             >;
         };
 
-        APPLE {
-            bindings = <
-&trans  &trans  &trans                       &trans                       &trans                      &trans  &trans  &trans        &trans  &trans
-&trans  &trans  &trans                       &trans                       &trans  &trans      &trans  &trans  &trans  &trans        &trans  &trans
-&trans  &trans  &trans                       &trans                       &trans  &trans      &trans  &trans  &trans  &lt 10 COMMA  &trans  &trans
-&trans  &trans  &mt LS(LEFT_ALT) LANGUAGE_2  &mt LEFT_COMMAND LANGUAGE_2  &trans  &trans      &trans  &trans                                &trans
-            >;
-
-            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
-        };
-
         CONFIG {
             bindings = <
 &trans  &trans  &trans  &trans  &trans                                       &bt_Mac                      &bt_iPad  &bt_2   &bt_3         &bt_4
@@ -290,6 +279,17 @@
 &trans   &kp F1  &kp F2  &kp F3  &trans  &trans               &trans  &trans           &kp F11  &kp F12  &kp F13  &kp PAGE_DOWN
 &trans   &trans  &trans  &trans  &trans  &bootloader          &trans  &trans                                      &trans
             >;
+        };
+
+        APPLE {
+            bindings = <
+&trans  &trans  &trans                       &trans                       &trans                                 &trans  &trans  &trans        &trans  &trans
+&trans  &trans  &trans                       &trans                       &trans  &trans      &kp LG(PLUS)       &trans  &trans  &trans        &trans  &trans
+&trans  &trans  &trans                       &trans                       &trans  &trans      &mt F10 LG(MINUS)  &trans  &trans  &lt 10 COMMA  &trans  &trans
+&trans  &trans  &mt LS(LEFT_ALT) LANGUAGE_2  &mt LEFT_COMMAND LANGUAGE_2  &trans  &trans      &trans             &trans                                &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
 
         Mouse {
