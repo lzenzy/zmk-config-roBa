@@ -208,7 +208,7 @@
 &qq_esc_lang2     &kp W         &kp E         &kp R                    &kp T                                                 &kp Y        &kp U  &lt 8 I       &kp O          &kp P
 &mt LEFT_SHIFT A  &kp S         &kp D         &kp F                    &kp G               &kp JP_LBRACKET      &kp JP_PLUS  &kp H        &kp J  &kp K         &kp L          &mt RSHIFT JP_COLON
 &mt LSHIFT Z      &kp X         &kp C         &kp V                    &kp B               &kp JP_RBRACKET      &kp MINUS    &kp N        &kp M  &lt 10 COMMA  &mt RCTRL DOT  &mt RSHIFT SLASH
-&kp LCTRL         &lt 0 K_MUTE  &kp LEFT_WIN  &mt LEFT_ALT LANGUAGE_2  &lt_to_layer_0 1 0  &lt 2 BSPC           &lt 3 SPACE  &lt 1 LANG1                                      &lt 9 ENTER
+&kp LCTRL         &lt 8 K_MUTE  &kp LEFT_WIN  &mt LEFT_ALT LANGUAGE_2  &lt_to_layer_0 1 0  &lt 2 BSPC           &lt 3 SPACE  &lt 1 LANG1                                      &lt 9 ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -265,10 +265,10 @@
 
         APPLE {
             bindings = <
-&trans  &trans  &trans                       &trans                       &trans                            &trans  &trans  &trans        &trans  &trans
-&trans  &trans  &trans                       &trans                       &trans  &trans      &kp NUMBER_6  &trans  &trans  &trans        &trans  &trans
-&trans  &trans  &trans                       &trans                       &trans  &trans      &trans        &trans  &trans  &lt 10 COMMA  &trans  &trans
-&trans  &trans  &mt LS(LEFT_ALT) LANGUAGE_2  &mt LEFT_COMMAND LANGUAGE_2  &trans  &trans      &trans        &trans                                &trans
+&trans  &trans  &trans                       &trans                       &trans                      &trans  &trans  &trans        &trans  &trans
+&trans  &trans  &trans                       &trans                       &trans  &trans      &trans  &trans  &trans  &trans        &trans  &trans
+&trans  &trans  &trans                       &trans                       &trans  &trans      &trans  &trans  &trans  &lt 10 COMMA  &trans  &trans
+&trans  &trans  &mt LS(LEFT_ALT) LANGUAGE_2  &mt LEFT_COMMAND LANGUAGE_2  &trans  &trans      &trans  &trans                                &trans
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -285,19 +285,19 @@
 
         FUNCTION {
             bindings = <
-&trans   &kp F7  &kp F8  &kp F9  &trans                                     &kp PRINTSCREEN  &kp F17  &kp F18  &kp F19  &bootloader
-&kp F10  &kp F4  &kp F5  &kp F6  &trans  &kp PRINTSCREEN      &kp NUMBER_1  &kp PRINTSCREEN  &kp F14  &kp F15  &kp F16  &kp PAGE_UP
-&trans   &kp F1  &kp F2  &kp F3  &trans  &trans               &trans        &trans           &kp F11  &kp F12  &kp F13  &kp PAGE_DOWN
-&trans   &trans  &trans  &trans  &trans  &bootloader          &trans        &trans                                      &trans
+&trans   &kp F7  &kp F8  &kp F9  &trans                               &kp PRINTSCREEN  &kp F17  &kp F18  &kp F19  &bootloader
+&kp F10  &kp F4  &kp F5  &kp F6  &trans  &kp PRINTSCREEN      &kp N8  &kp PRINTSCREEN  &kp F14  &kp F15  &kp F16  &kp PAGE_UP
+&trans   &kp F1  &kp F2  &kp F3  &trans  &trans               &trans  &trans           &kp F11  &kp F12  &kp F13  &kp PAGE_DOWN
+&trans   &trans  &trans  &trans  &trans  &bootloader          &trans  &trans                                      &trans
             >;
         };
 
         Mouse {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                            &trans  &trans    &trans        &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &to 0       &kp NUMBER_4  &trans  &mkp MB1  &mkp MB2      &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans        &trans  &trans    &lt 10 COMMA  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans        &trans                                  &trans
+&trans  &trans  &trans  &trans  &trans                      &trans  &trans    &trans        &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &kp N9  &trans  &mkp MB1  &mkp MB2      &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans  &trans    &lt 10 COMMA  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                  &trans
             >;
         };
 
