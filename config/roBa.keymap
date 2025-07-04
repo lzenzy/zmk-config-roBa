@@ -39,13 +39,13 @@
         compatible = "zmk,conditional-layers";
 
         ipad_num_arrow {
-            if-layers = <2 7>;      // NUM_ARROW + iPad
-            then-layer = <8>;       // iPad用NUM_ARROW
+            if-layers = <1 3>;      // NUM_ARROW + iPad
+            then-layer = <4>;       // iPad用NUM_ARROW
         };
 
         ipad_symbol {
-            if-layers = <3 7>;      // SYMBOL + iPad
-            then-layer = <9>;       // iPad用SYMBOL
+            if-layers = <2 3>;      // SYMBOL + iPad
+            then-layer = <5>;       // iPad用SYMBOL
         };
     };
 
@@ -119,21 +119,21 @@
         apple_toggle: apple_toggle {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tog 6>;
+            bindings = <&tog 7>;
             label = "APPLE_TOGGLE";
         };
 
         ipad_toggle: sjis_toggle {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&tog 7>;
+            bindings = <&tog 3>;
             label = "SJIS_TOGGLE";
         };
 
         bt_Mac: Mac {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 0>, <&macro_wait_time 100>, <&to 6>;
+            bindings = <&bt BT_SEL 0>, <&macro_wait_time 100>, <&to 7>;
 
             label = "MAC";
         };
@@ -141,7 +141,7 @@
         bt_iPad: iPad {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 1>, <&macro_wait_time 100>, <&to 7>;
+            bindings = <&bt BT_SEL 1>, <&macro_wait_time 100>, <&to 3>;
 
             label = "IPAD";
         };
@@ -194,7 +194,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "ENT_ENT_MOUSE";
             #binding-cells = <0>;
-            bindings = <&kp RET>, <&tog 4>;
+            bindings = <&kp RET>, <&tog 8>;
 
             tapping-term-ms = <300>;
         };
@@ -205,22 +205,13 @@
 
         default_layer {
             bindings = <
-&qq_esc_lang2     &kp W         &kp E         &kp R                    &kp T                                                 &kp Y        &kp U  &lt 4 I       &kp O          &kp P
+&qq_esc_lang2     &kp W         &kp E         &kp R                    &kp T                                                 &kp Y        &kp U  &lt 8 I       &kp O          &kp P
 &mt LEFT_SHIFT A  &kp S         &kp D         &kp F                    &kp G               &kp JP_LBRACKET      &kp JP_PLUS  &kp H        &kp J  &kp K         &kp L          &mt RSHIFT JP_COLON
 &mt LSHIFT Z      &kp X         &kp C         &kp V                    &kp B               &kp JP_RBRACKET      &kp MINUS    &kp N        &kp M  &lt 10 COMMA  &mt RCTRL DOT  &mt RSHIFT SLASH
-&kp LCTRL         &lt 1 K_MUTE  &kp LEFT_WIN  &mt LEFT_ALT LANGUAGE_2  &lt_to_layer_0 2 0  &lt 3 BSPC           &lt 5 SPACE  &lt 2 LANG1                                      &lt 4 ENTER
+&kp LCTRL         &lt 0 K_MUTE  &kp LEFT_WIN  &mt LEFT_ALT LANGUAGE_2  &lt_to_layer_0 1 0  &lt 2 BSPC           &lt 3 SPACE  &lt 1 LANG1                                      &lt 8 ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
-        };
-
-        FUNCTION {
-            bindings = <
-&trans   &kp F7  &kp F8  &kp F9  &trans                                     &kp PRINTSCREEN  &kp F17  &kp F18  &kp F19  &bootloader
-&kp F10  &kp F4  &kp F5  &kp F6  &trans  &kp PRINTSCREEN      &kp NUMBER_1  &kp PRINTSCREEN  &kp F14  &kp F15  &kp F16  &kp PAGE_UP
-&trans   &kp F1  &kp F2  &kp F3  &trans  &trans               &trans        &trans           &kp F11  &kp F12  &kp F13  &kp PAGE_DOWN
-&trans   &trans  &trans  &trans  &trans  &bootloader          &trans        &trans                                      &trans
-            >;
         };
 
         NUM_ARROW {
@@ -241,35 +232,6 @@
             >;
 
             sensor-bindings = <&inc_dec_kp LC(PAGE_UP) LC(PAGE_DOWN)>;
-        };
-
-        Mouse {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                            &trans  &trans    &trans        &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &to 0       &kp NUMBER_4  &trans  &mkp MB1  &mkp MB2      &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans        &trans  &trans    &lt 10 COMMA  &trans  &trans
-&trans  &trans  &trans  &trans  &trans  &trans      &trans        &trans                                  &trans
-            >;
-        };
-
-        CONFIG {
-            bindings = <
-&trans  &trans  &trans  &trans  &trans                                       &bt_Mac                      &bt_iPad  &bt_2   &bt_3         &bt_4
-&trans  &trans  &trans  &trans  &trans  &trans      &kp C_VOL_UP             &kp C_AC_ZOOM_IN             &trans    &trans  &ipad_toggle  &apple_toggle
-&trans  &trans  &trans  &trans  &trans  &trans      &mt LS(K_MUTE) C_VOL_DN  &mt C_AC_ZOOM C_AC_ZOOM_OUT  &trans    &trans  &trans        &bt BT_CLR
-&trans  &trans  &trans  &trans  &trans  &trans      &trans                   &trans                                                       &bt BT_CLR_ALL
-            >;
-        };
-
-        APPLE {
-            bindings = <
-&trans  &trans  &trans                       &trans                       &trans                            &trans  &trans  &trans        &trans  &trans
-&trans  &trans  &trans                       &trans                       &trans  &trans      &kp NUMBER_6  &trans  &trans  &trans        &trans  &trans
-&trans  &trans  &trans                       &trans                       &trans  &trans      &trans        &trans  &trans  &lt 10 COMMA  &trans  &trans
-&trans  &trans  &mt LS(LEFT_ALT) LANGUAGE_2  &mt LEFT_COMMAND LANGUAGE_2  &trans  &trans      &trans        &trans                                &trans
-            >;
-
-            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
         };
 
         IPAD {
@@ -298,6 +260,44 @@
 &trans  &trans  &trans  &trans  &kp ASTERISK  &trans      &kp DOUBLE_QUOTES  &trans  &trans     &trans        &trans     &kp PLUS
 &trans  &trans  &trans  &trans  &kp SLASH     &trans      &trans             &trans  &trans     &lt 10 COMMA  &trans     &kp BACKSLASH
 &trans  &trans  &trans  &trans  &trans        &trans      &trans             &trans                                      &trans
+            >;
+        };
+
+        APPLE {
+            bindings = <
+&trans  &trans  &trans                       &trans                       &trans                            &trans  &trans  &trans        &trans  &trans
+&trans  &trans  &trans                       &trans                       &trans  &trans      &kp NUMBER_6  &trans  &trans  &trans        &trans  &trans
+&trans  &trans  &trans                       &trans                       &trans  &trans      &trans        &trans  &trans  &lt 10 COMMA  &trans  &trans
+&trans  &trans  &mt LS(LEFT_ALT) LANGUAGE_2  &mt LEFT_COMMAND LANGUAGE_2  &trans  &trans      &trans        &trans                                &trans
+            >;
+
+            sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
+        };
+
+        CONFIG {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                                       &bt_Mac                      &bt_iPad  &bt_2   &bt_3         &bt_4
+&trans  &trans  &trans  &trans  &trans  &trans      &kp C_VOL_UP             &kp C_AC_ZOOM_IN             &trans    &trans  &ipad_toggle  &apple_toggle
+&trans  &trans  &trans  &trans  &trans  &trans      &mt LS(K_MUTE) C_VOL_DN  &mt C_AC_ZOOM C_AC_ZOOM_OUT  &trans    &trans  &trans        &bt BT_CLR
+&trans  &trans  &trans  &trans  &trans  &trans      &trans                   &trans                                                       &bt BT_CLR_ALL
+            >;
+        };
+
+        FUNCTION {
+            bindings = <
+&trans   &kp F7  &kp F8  &kp F9  &trans                                     &kp PRINTSCREEN  &kp F17  &kp F18  &kp F19  &bootloader
+&kp F10  &kp F4  &kp F5  &kp F6  &trans  &kp PRINTSCREEN      &kp NUMBER_1  &kp PRINTSCREEN  &kp F14  &kp F15  &kp F16  &kp PAGE_UP
+&trans   &kp F1  &kp F2  &kp F3  &trans  &trans               &trans        &trans           &kp F11  &kp F12  &kp F13  &kp PAGE_DOWN
+&trans   &trans  &trans  &trans  &trans  &bootloader          &trans        &trans                                      &trans
+            >;
+        };
+
+        Mouse {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                            &trans  &trans    &trans        &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &to 0       &kp NUMBER_4  &trans  &mkp MB1  &mkp MB2      &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans        &trans  &trans    &lt 10 COMMA  &trans  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans        &trans                                  &trans
             >;
         };
 
