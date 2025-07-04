@@ -205,10 +205,10 @@
 
         default_layer {
             bindings = <
-&qq_esc_lang2     &kp W         &kp E         &kp R                    &kp T                                                   &kp Y             &kp U   &lt 4 I        &kp O          &kp P
-&mt LEFT_SHIFT A  &kp S         &kp D         &kp F                    &kp G               &kp JP_LBRACKET      &kp JP_PLUS    &kp H             &kp J   &kp K          &kp L          &mt RSHIFT JP_COLON
-&mt LSHIFT Z      &kp X         &kp C         &kp V                    &kp B               &kp JP_RBRACKET      &kp MINUS      &kp N             &kp M   &lt 10 COMMA   &mt RCTRL DOT  &mt RSHIFT SLASH
-&kp LCTRL         &lt 1 K_MUTE  &kp LEFT_WIN  &mt LEFT_ALT LANGUAGE_2  &lt_to_layer_0 2 0  &lt 3 BSPC           &lt 5 SPACE    &lt 2 LANGUAGE_2                                        &lt 4 ENTER
+&qq_esc_lang2     &kp W         &kp E         &kp R                    &kp T                                                 &kp Y        &kp U  &lt 4 I       &kp O          &kp P
+&mt LEFT_SHIFT A  &kp S         &kp D         &kp F                    &kp G               &kp JP_LBRACKET      &kp JP_PLUS  &kp H        &kp J  &kp K         &kp L          &mt RSHIFT JP_COLON
+&mt LSHIFT Z      &kp X         &kp C         &kp V                    &kp B               &kp JP_RBRACKET      &kp MINUS    &kp N        &kp M  &lt 10 COMMA  &mt RCTRL DOT  &mt RSHIFT SLASH
+&kp LCTRL         &lt 1 K_MUTE  &kp LEFT_WIN  &mt LEFT_ALT LANGUAGE_2  &lt_to_layer_0 2 0  &lt 3 BSPC           &lt 5 SPACE  &lt 2 LANG1                                      &lt 4 ENTER
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -216,19 +216,19 @@
 
         FUNCTION {
             bindings = <
-&trans   &kp F7  &kp F8  &kp F9  &trans                                     &kp PRINTSCREEN    &kp F17  &kp F18  &kp F19  &kp C_PLAY_PAUSE
-&kp F10  &kp F4  &kp F5  &kp F6  &trans  &kp PRINTSCREEN      &kp NUMBER_1  &kp PRINTSCREEN    &kp F14  &kp F15  &kp F16  &kp PAGE_UP
-&trans   &kp F1  &kp F2  &kp F3  &trans  &trans               &trans        &trans             &kp F11  &kp F12  &kp F13  &kp PAGE_DOWN
-&trans   &trans  &trans  &trans  &trans  &bootloader          &trans        &trans                                        &trans
+&trans   &kp F7  &kp F8  &kp F9  &trans                                     &kp PRINTSCREEN  &kp F17  &kp F18  &kp F19  &kp C_PLAY_PAUSE
+&kp F10  &kp F4  &kp F5  &kp F6  &trans  &kp PRINTSCREEN      &kp NUMBER_1  &kp PRINTSCREEN  &kp F14  &kp F15  &kp F16  &kp PAGE_UP
+&trans   &kp F1  &kp F2  &kp F3  &trans  &trans               &trans        &trans           &kp F11  &kp F12  &kp F13  &kp PAGE_DOWN
+&trans   &trans  &trans  &trans  &trans  &bootloader          &trans        &trans                                      &trans
             >;
         };
 
         NUM_ARROW {
             bindings = <
-&kp JP_LBRACKET  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp JP_RBRACKET                                      &kp JP_BACKQUOTE  &kp JP_AT        &kp JP_YEN     &kp MINUS         &kp JP_CARET
-&kp N0           &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp JP_PLUS         &kp JP_LPAREN   &kp JP_QUOTE     &kp LEFT_ARROW    &kp DOWN_ARROW   &kp UP_ARROW   &kp RIGHT_ARROW   &kp SEMICOLON
-&kp N0           &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp JP_EQUAL        &kp JP_RPAREN   &kp JP_AT        &kp HOME          &kp PAGE_DOWN    &kp PAGE_UP    &kp END           &kp JP_UNDERSCORE
-&trans           &trans        &trans        &trans        &trans              &trans          &trans           &trans                                                          &kp LS(ENTER)
+&kp JP_LBRACKET  &kp NUMBER_7  &kp NUMBER_8  &kp NUMBER_9  &kp JP_RBRACKET                                   &kp JP_BACKQUOTE  &kp JP_AT       &kp JP_YEN    &kp MINUS        &kp JP_CARET
+&kp N0           &kp NUMBER_4  &kp NUMBER_5  &kp NUMBER_6  &kp JP_PLUS      &kp JP_LPAREN      &kp JP_QUOTE  &kp LEFT_ARROW    &kp DOWN_ARROW  &kp UP_ARROW  &kp RIGHT_ARROW  &kp SEMICOLON
+&kp N0           &kp NUMBER_1  &kp NUMBER_2  &kp NUMBER_3  &kp JP_EQUAL     &kp JP_RPAREN      &kp JP_AT     &kp HOME          &kp PAGE_DOWN   &kp PAGE_UP   &kp END          &kp JP_UNDERSCORE
+&trans           &trans        &trans        &trans        &trans           &trans             &trans        &trans                                                           &kp LS(ENTER)
             >;
         };
 
