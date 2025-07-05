@@ -283,10 +283,10 @@
 
         APPLE {
             bindings = <
-&trans  &trans  &trans                       &trans                       &trans                                 &trans  &trans  &trans        &trans  &trans
-&trans  &trans  &trans                       &trans                       &trans  &trans      &kp LG(PLUS)       &trans  &trans  &trans        &trans  &trans
-&trans  &trans  &trans                       &trans                       &trans  &trans      &mt F10 LG(MINUS)  &trans  &trans  &lt 10 COMMA  &trans  &trans
-&trans  &trans  &mt LS(LEFT_ALT) LANGUAGE_2  &mt LEFT_COMMAND LANGUAGE_2  &trans  &trans      &trans             &trans                                &trans
+&trans  &trans  &trans                       &trans                       &trans                      &trans  &trans  &trans        &trans  &trans
+&trans  &trans  &trans                       &trans                       &trans  &trans      &trans  &trans  &trans  &trans        &trans  &trans
+&trans  &trans  &trans                       &trans                       &trans  &trans      &trans  &trans  &trans  &lt 10 COMMA  &trans  &trans
+&trans  &trans  &mt LS(LEFT_ALT) LANGUAGE_2  &mt LEFT_COMMAND LANGUAGE_2  &trans  &trans      &trans  &trans                                &trans
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
