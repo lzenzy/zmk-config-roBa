@@ -97,17 +97,6 @@
             key-positions = <18 19>;
         };
 
-        apple_mode_toggle {
-            bindings = <&apple_toggle>;
-            key-positions = <0 9>;
-        };
-
-        ipad_mode_toggle {
-            bindings = <&ipad_toggle>;
-            key-positions = <1 8>;
-        };
-    };
-
     macros {
         esc_lang2: to_layer_0 {
             compatible = "zmk,behavior-macro";
