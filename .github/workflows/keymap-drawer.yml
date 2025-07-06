@@ -1,0 +1,73 @@
+name: Update Keymap Drawer
+
+on:
+  push:
+    branches: [ main, minimum ]
+    paths:
+      - 'config/roBa.keymap'
+      - 'config/boards/shields/Test/**'
+  pull_request:
+    branches: [ main, minimum ]
+    paths:
+      - 'config/roBa.keymap'
+      - 'config/boards/shields/Test/**'
+  workflow_dispatch:
+
+jobs:
+  update-keymap-drawer:
+    runs-on: ubuntu-latest
+    
+    steps:
+    - name: Checkout repository
+      uses: actions/checkout@v4
+      with:
+        fetch-depth: 0
+        token: ${{ secrets.GITHUB_TOKEN }}
+
+    - name: Set up Python
+      uses: actions/setup-python@v4
+      with:
+        python-version: '3.11'
+
+    - name: Install keymap-drawer
+      run: |
+        pip install keymap-drawer
+
+    - name: Parse ZMK keymap and generate YAML
+      run: |
+        keymap parse -c 10 -z config/roBa.keymap > keymap-drawer/roBa.yaml
+
+    - name: Generate SVG diagram
+      run: |
+        keymap draw keymap-drawer/roBa.yaml -o keymap-drawer/roBa.svg
+
+    - name: Check for changes
+      id: check-changes
+      run: |
+        if git diff --quiet keymap-drawer/; then
+          echo "No changes to keymap drawer files"
+          echo "changed=false" >> $GITHUB_OUTPUT
+        else
+          echo "Changes detected in keymap drawer files"
+          echo "changed=true" >> $GITHUB_OUTPUT
+        fi
+
+    - name: Commit and push changes
+      if: steps.check-changes.outputs.changed == 'true' && github.event_name == 'push'
+      run: |
+        git config --local user.email "action@github.com"
+        git config --local user.name "GitHub Action"
+        git add keymap-drawer/
+        git commit -m "Update keymap drawer diagrams
+
+        Auto-generated from keymap changes
+        
+        Co-authored-by: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>"
+        git push
+
+    - name: Upload keymap diagram as artifact
+      if: steps.check-changes.outputs.changed == 'true'
+      uses: actions/upload-artifact@v4
+      with:
+        name: keymap-diagram
+        path: keymap-drawer/roBa.svg
