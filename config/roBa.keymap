@@ -96,6 +96,7 @@
             bindings = <&esc_lang2>;
             key-positions = <18 19>;
         };
+    };
 
     macros {
         esc_lang2: to_layer_0 {
