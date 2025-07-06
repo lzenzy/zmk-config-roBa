@@ -17,7 +17,7 @@ on:
       - "keymap_drawer.config.yaml"
 jobs:
   draw:
-    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@42b4808effec464090c677877a5c98e1c04a8670
+    uses: caksoylar/keymap-drawer/.github/workflows/draw-zmk.yml@enable_fldrawer
     permissions:
       contents: write
     with:
