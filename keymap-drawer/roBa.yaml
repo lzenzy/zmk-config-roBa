@@ -503,7 +503,3 @@ combos:
   k: DEL
 - p: [18, 19]
   k: '&esc_lang2'
-- p: [0, 9]
-  k: '&apple_toggle'
-- p: [1, 8]
-  k: '&ipad_toggle'
