@@ -2,12 +2,12 @@ name: Update Keymap Drawer
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, minimum ]
     paths:
       - 'config/roBa.keymap'
       - 'config/boards/shields/Test/**'
   pull_request:
-    branches: [ main ]
+    branches: [ main, minimum ]
     paths:
       - 'config/roBa.keymap'
       - 'config/boards/shields/Test/**'
