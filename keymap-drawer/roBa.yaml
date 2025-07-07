@@ -39,7 +39,7 @@ layers:
   - {t: MUTE, h: FUNCTION}
   - LEFT WIN
   - {t: LANGUAGE 2, h: LEFT ALT}
-  - {t: '&esc_lang2', h: NUM_ARROW}
+  - {t: LANG2, h: NUM_ARROW}
   - {t: BSPC, h: SYMBOL}
   - {t: SPACE, h: CONFIG}
   - {t: LANG1, h: NUM_ARROW}
