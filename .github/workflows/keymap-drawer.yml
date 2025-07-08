@@ -35,8 +35,7 @@ jobs:
 
     - name: Parse ZMK keymap and generate YAML
       run: |
-        keymap parse -c 10 -z config/roBa.keymap > keymap-drawer/roBa.yaml
-
+        keymap parse -c 10 -z config/roBa.keymap -b corne > keymap-drawer/roBa.yaml
     - name: Generate SVG diagram
       run: |
         keymap draw keymap-drawer/roBa.yaml -o keymap-drawer/roBa.svg
