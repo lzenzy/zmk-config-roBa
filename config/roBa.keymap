@@ -178,6 +178,25 @@
 
             tapping-term-ms = <300>;
         };
+
+        ent_ent_mouse: ent_ent_mouse {
+            compatible = "zmk,behavior-tap-dance";
+            label = "ENT_ENT_MOUSE";
+            #binding-cells = <0>;
+            bindings = <&kp ENTER>, <&tog 9>;
+
+            tapping-term-ms = <200>;
+        };
+
+        ht_auto_entmouse: ht_auto_entmouse {
+            compatible = "zmk,behavior-hold-tap";
+            label = "HT_AUTO_ENTMOUSE";
+            bindings = <&mo>, <&ent_ent_mouse>;
+
+            #binding-cells = <2>;
+            flavor = "tap-preferred";
+            tapping-term-ms = <200>;
+        };
     };
 
     keymap {
@@ -188,7 +207,7 @@
 &qq_esc_lang2     &kp W         &kp E         &kp R                    &kp T                                                                 &kp Y        &kp U  &kp I        &kp O    &kp P
 &mt LEFT_SHIFT A  &kp S         &kp D         &kp F                    &kp G             &esc_lang2                &kp K_VOLUME_UP           &kp H        &kp J  &kp K        &kp L    &mt RSHIFT COLON
 &mt LSHIFT Z      &kp X         &kp C         &kp V                    &kp B             &lt_to_layer_0 4 TAB      &mt K_MUTE K_VOLUME_DOWN  &kp N        &kp M  &lt 0 COMMA  &kp DOT  &mt RSHIFT SLASH
-&kp LCTRL         &lt 1 K_MUTE  &kp LEFT_WIN  &mt LEFT_ALT LANGUAGE_2  &lt 2 LANGUAGE_2  &lt 3 BSPC                &kp SPACE                 &lt 2 LANG1                               &lt 9 ENTER
+&kp LCTRL         &lt 1 K_MUTE  &kp LEFT_WIN  &mt LEFT_ALT LANGUAGE_2  &lt 2 LANGUAGE_2  &lt 3 BSPC                &kp SPACE                 &lt 2 LANG1                               &ht_auto_entmouse 9 0
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
