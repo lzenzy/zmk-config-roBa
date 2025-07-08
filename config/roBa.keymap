@@ -184,7 +184,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "ENT_ENT_MOUSE";
             #binding-cells = <0>;
-            bindings = <&kp RET>, <&tog 10>;
+            bindings = <&kp RET>, <&tog 11>;
 
             tapping-term-ms = <300>;
         };
@@ -198,7 +198,7 @@
 &qq_esc_lang2     &kp W         &kp E         &kp R                    &kp T                                          &kp Y        &kp U  &lt 9 I       &kp O          &kp P
 &mt LEFT_SHIFT A  &kp S         &kp D         &kp F                    &kp G        &kp JP_LBRACKET      &kp JP_PLUS  &kp H        &kp J  &kp K         &kp L          &mt RSHIFT JP_COLON
 &mt LSHIFT Z      &kp X         &kp C         &kp V                    &kp B        &kp JP_RBRACKET      &kp MINUS    &kp N        &kp M  &lt 10 COMMA  &mt RCTRL DOT  &mt RSHIFT SLASH
-&kp LCTRL         &lt 7 K_MUTE  &kp LEFT_WIN  &mt LEFT_ALT LANGUAGE_2  &lt 1 LANG2  &lt 2 BSPC           &lt 6 SPACE  &lt 1 LANG1                                      &lt 9 ENTER
+&kp LCTRL         &lt 7 K_MUTE  &kp LEFT_WIN  &mt LEFT_ALT LANGUAGE_2  &lt 1 LANG2  &lt 2 BSPC           &lt 6 SPACE  &lt 1 LANG1                                      &ent_ent_mouse
             >;
 
             sensor-bindings = <&inc_dec_kp PG_UP PAGE_DOWN>;
@@ -297,6 +297,15 @@
 &trans  &bt_3    &bt_4     &trans  &trans  &to 0       &kp S   &trans  &trans  &trans  &trans  &trans
 &trans  &bt_Mac  &bt_iPad  &bt_2   &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans   &trans    &trans  &trans  &trans      &trans  &trans                          &trans
+            >;
+        };
+
+        MnualMouse {
+            bindings = <
+&trans  &trans  &trans  &trans  &trans                      &trans    &trans    &trans        &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &mkp MB4  &mkp MB1  &mkp MB2      &mkp MB5  &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans    &trans    &lt 10 COMMA  &trans    &trans
+&trans  &trans  &trans  &trans  &trans  &trans      &trans  &trans                                      &trans
             >;
         };
     };
