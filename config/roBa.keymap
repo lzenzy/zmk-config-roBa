@@ -184,7 +184,7 @@
             compatible = "zmk,behavior-tap-dance";
             label = "ENT_ENT_MOUSE";
             #binding-cells = <0>;
-            bindings = <&kp RET>, <&tog 10>;
+            bindings = <&kp RET>, <&tog 11>;
 
             tapping-term-ms = <300>;
         };
