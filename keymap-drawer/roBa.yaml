@@ -537,8 +537,6 @@ combos:
   k: ESCAPE
 - p: [8, 9]
   k: DEL
-- p: [20, 21]
-  k: BSPC
 - p: [10, 11]
   k: TAB
 - p: [19, 20]
