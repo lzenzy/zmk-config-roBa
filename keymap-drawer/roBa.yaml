@@ -43,7 +43,7 @@ layers:
   - {t: BSPC, h: SYMBOL}
   - {t: SPACE, h: CONFIG}
   - {t: LANG1, h: NUM_ARROW}
-  - '&ent_ent_mouse'
+  - {t: ENTER, h: Mouse}
   NUM_ARROW:
   - ']'
   - '7'
