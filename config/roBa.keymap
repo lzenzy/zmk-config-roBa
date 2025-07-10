@@ -72,11 +72,6 @@
             key-positions = <8 9>;
         };
 
-        lisBS {
-            bindings = <&kp BSPC>;
-            key-positions = <20 21>;
-        };
-
         ASisTAG {
             bindings = <&kp TAB>;
             key-positions = <10 11>;
