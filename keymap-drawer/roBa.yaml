@@ -547,3 +547,7 @@ combos:
   k: DEL
 - p: [18, 19]
   k: '&esc_lang2'
+- p: [20, 21]
+  k: ENTER
+- p: [10, 21]
+  k: '&caps_word'
