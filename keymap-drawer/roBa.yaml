@@ -503,3 +503,5 @@ combos:
   k: DEL
 - p: [18, 19]
   k: '&esc_lang2'
+- p: [10, 21]
+  k: '&caps_word'
