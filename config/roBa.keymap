@@ -96,6 +96,11 @@
             bindings = <&esc_lang2>;
             key-positions = <18 19>;
         };
+
+        both_shift_to_capsword {
+            bindings = <&caps_word>;
+            key-positions = <10 21>;
+        };
     };
 
     macros {
