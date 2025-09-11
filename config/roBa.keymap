@@ -270,7 +270,7 @@
         FUNCTION {
             bindings = <
 &trans   &kp F7  &kp F8  &kp F9  &trans                               &kp PRINTSCREEN  &kp F17  &kp F18  &kp F19  &bootloader
-&kp F10  &kp F4  &kp F5  &kp F6  &trans  &kp PRINTSCREEN      &kp N8  &trans           &kp F14  &kp F15  &kp F16  &kp PAGE_UP
+&kp F10  &kp F4  &kp F5  &kp F6  &trans  &kp PRINTSCREEN      &kp N7  &trans           &kp F14  &kp F15  &kp F16  &kp PAGE_UP
 &trans   &kp F1  &kp F2  &kp F3  &trans  &trans               &trans  &trans           &kp F11  &kp F12  &kp F13  &kp PAGE_DOWN
 &trans   &trans  &trans  &trans  &trans  &bootloader          &trans  &trans                                      &trans
             >;
