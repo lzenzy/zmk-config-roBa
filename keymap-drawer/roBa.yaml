@@ -325,7 +325,7 @@ layers:
   - F6
   - {t: ▽, type: trans}
   - PRINTSCREEN
-  - '8'
+  - '7'
   - {t: ▽, type: trans}
   - F14
   - F15
