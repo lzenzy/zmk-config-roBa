@@ -309,7 +309,7 @@ layers:
   - {t: ▽, type: trans}
   - BT CLR ALL
   FUNCTION:
-  - {t: ▽, type: trans}
+  - '&toggle_9'
   - F7
   - F8
   - F9
