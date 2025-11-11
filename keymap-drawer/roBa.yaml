@@ -33,7 +33,7 @@ layers:
   - N
   - M
   - {t: ',', h: SCROLL}
-  - {t: ., h: RCTRL}
+  - {t: ., h: RIGHT COMMAND}
   - {t: /, h: RSHIFT}
   - LCTRL
   - {t: MUTE, h: FUNCTION}
