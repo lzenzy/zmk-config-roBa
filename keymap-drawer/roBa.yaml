@@ -389,7 +389,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: LANGUAGE 2, h: Sft+LEFT ALT}
+  - {t: LANGUAGE 2, h: LEFT ALT}
   - {t: LANGUAGE 2, h: LEFT COMMAND}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
