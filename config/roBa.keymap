@@ -77,8 +77,8 @@
             key-positions = <20 21>;
         };
 
-        ASisTAG {
-            bindings = <&kp TAB>;
+        ASisAT {
+            bindings = <&kp JP_AT>;
             key-positions = <10 11>;
         };
 
