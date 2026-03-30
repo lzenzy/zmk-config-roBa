@@ -19,16 +19,10 @@ jobs:
           name: roBa-firmware-uf2
           path: firmware/
 
-      - name: Set up Python
-        uses: actions/setup-python@v5
-        with:
-          python-version: '3.11'
-
       - name: Generate keymap SVG from current commit
-        run: |
-          pip install 'tree-sitter==0.23.2' 'keymap-drawer==0.21.0'
-          keymap parse -c 10 -z config/roBa.keymap > firmware/roBa-keymap.yaml
-          keymap draw firmware/roBa-keymap.yaml -o firmware/roBa-keymap.svg
+        uses: docker://caksoylar/keymap-drawer:latest
+        with:
+          args: bash -c "keymap parse -c 10 -z config/roBa.keymap > /tmp/roBa.yaml && keymap draw /tmp/roBa.yaml -o firmware/roBa-keymap.svg"
 
       - name: Re-upload with git hash and keymap
         uses: actions/upload-artifact@v4
