@@ -22,7 +22,7 @@ jobs:
       - name: Generate keymap SVG from current commit
         run: |
           pip install 'keymap-drawer==0.20.0'
-          keymap parse -c 10 -z config/roBa.keymap > /tmp/roBa.yaml
+          keymap parse -c 10 -z config/roBa.keymap --cols-thumbs-notation 5+1 5+1 > /tmp/roBa.yaml
           keymap draw /tmp/roBa.yaml -o firmware/roBa-keymap.svg
 
       - name: Re-upload with git hash and keymap
