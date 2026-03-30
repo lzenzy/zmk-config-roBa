@@ -64,9 +64,3 @@ jobs:
         Co-authored-by: ${{ github.actor }} <${{ github.actor }}@users.noreply.github.com>"
         git push
 
-    - name: Upload keymap diagram as artifact
-      if: steps.check-changes.outputs.changed == 'true'
-      uses: actions/upload-artifact@v4
-      with:
-        name: keymap-diagram
-        path: keymap-drawer/roBa.svg

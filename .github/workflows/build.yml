@@ -2,4 +2,34 @@ on: [push, pull_request, workflow_dispatch]
 
 jobs:
   build:
-    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@main
+    uses: zmkfirmware/zmk/.github/workflows/build-user-config.yml@773892434931b74bdf54474b73c909779daa9471
+    with:
+      archive_name: "roBa-firmware-uf2"
+
+  package:
+    needs: build
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Download firmware
+        uses: actions/download-artifact@v4
+        with:
+          name: roBa-firmware-uf2
+          path: firmware/
+
+      - name: Copy keymap SVG
+        run: |
+          cp keymap-drawer/roBa.svg firmware/roBa-keymap.svg 2>/dev/null || echo "No keymap SVG found, skipping"
+
+      - name: Re-upload with git hash and keymap
+        uses: actions/upload-artifact@v4
+        with:
+          name: roBa-firmware-${{ github.sha }}
+          path: firmware/
+
+      - name: Delete intermediate artifact
+        uses: geekyeggo/delete-artifact@v5
+        with:
+          name: roBa-firmware-uf2
