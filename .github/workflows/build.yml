@@ -22,11 +22,11 @@ jobs:
       - name: Set up Python
         uses: actions/setup-python@v5
         with:
-          python-version: '3.12'
+          python-version: '3.11'
 
       - name: Generate keymap SVG from current commit
         run: |
-          pip install 'keymap-drawer==0.22.0'
+          pip install 'keymap-drawer==0.21.0'
           keymap parse -c 10 -z config/roBa.keymap > firmware/roBa-keymap.yaml
           keymap draw firmware/roBa-keymap.yaml -o firmware/roBa-keymap.svg
 
