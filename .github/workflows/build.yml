@@ -20,9 +20,10 @@ jobs:
           path: firmware/
 
       - name: Generate keymap SVG from current commit
-        uses: docker://caksoylar/keymap-drawer:latest
-        with:
-          args: bash -c "keymap parse -c 10 -z config/roBa.keymap > /tmp/roBa.yaml && keymap draw /tmp/roBa.yaml -o firmware/roBa-keymap.svg"
+        run: |
+          pipx install 'keymap-drawer==0.21.0'
+          keymap parse -c 10 -z config/roBa.keymap > /tmp/roBa.yaml
+          keymap draw /tmp/roBa.yaml -o firmware/roBa-keymap.svg
 
       - name: Re-upload with git hash and keymap
         uses: actions/upload-artifact@v4
