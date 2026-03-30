@@ -19,9 +19,16 @@ jobs:
           name: roBa-firmware-uf2
           path: firmware/
 
-      - name: Copy keymap SVG
+      - name: Set up Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+
+      - name: Generate keymap SVG from current commit
         run: |
-          cp keymap-drawer/roBa.svg firmware/roBa-keymap.svg 2>/dev/null || echo "No keymap SVG found, skipping"
+          pip install keymap-drawer
+          keymap parse -c 10 -z config/roBa.keymap > firmware/roBa-keymap.yaml
+          keymap draw firmware/roBa-keymap.yaml -o firmware/roBa-keymap.svg
 
       - name: Re-upload with git hash and keymap
         uses: actions/upload-artifact@v4
