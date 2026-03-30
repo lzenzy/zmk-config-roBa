@@ -496,7 +496,7 @@ combos:
 - p: [20, 21]
   k: BSPC
 - p: [10, 11]
-  k: TAB
+  k: '['
 - p: [19, 20]
   k: BACKSPACE
 - p: [7, 8]
