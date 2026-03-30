@@ -21,10 +21,9 @@ jobs:
 
       - name: Generate keymap SVG from current commit
         run: |
-          python3 -m venv /tmp/kd-venv
-          /tmp/kd-venv/bin/pip install 'tree-sitter<0.24' 'keymap-drawer==0.21.0'
-          /tmp/kd-venv/bin/keymap parse -c 10 -z config/roBa.keymap > /tmp/roBa.yaml
-          /tmp/kd-venv/bin/keymap draw /tmp/roBa.yaml -o firmware/roBa-keymap.svg
+          pip install 'keymap-drawer==0.20.0'
+          keymap parse -c 10 -z config/roBa.keymap > /tmp/roBa.yaml
+          keymap draw /tmp/roBa.yaml -o firmware/roBa-keymap.svg
 
       - name: Re-upload with git hash and keymap
         uses: actions/upload-artifact@v4
