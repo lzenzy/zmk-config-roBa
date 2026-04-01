@@ -20,7 +20,7 @@
 include:
  - board: seeeduino_xiao_ble
    shield: roBa_R
-   cmake-args: -DCONFIG_ZMK_USB_LOGGING=y -DCONFIG_SERIAL=y -DCONFIG_CONSOLE=y -DCONFIG_UART_CONSOLE=y -DCONFIG_UART_INTERRUPT_DRIVEN=y
+   snippet: zmk-usb-logging
  - board: seeeduino_xiao_ble
    shield: roBa_L
  - board: seeeduino_xiao_ble
