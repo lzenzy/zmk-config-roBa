@@ -20,7 +20,7 @@
 include:
  - board: seeeduino_xiao_ble
    shield: roBa_R
-   # snippet: studio-rpc-usb-uart  # disabled for USB logging debug
+   cmake-args: -DCONFIG_ZMK_USB_LOGGING=y
  - board: seeeduino_xiao_ble
    shield: roBa_L
  - board: seeeduino_xiao_ble
