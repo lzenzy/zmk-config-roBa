@@ -57,11 +57,6 @@
             key-positions = <11 12>;
         };
 
-        shift_tab {
-            bindings = <&kp LS(TAB)>;
-            key-positions = <12 13>;
-        };
-
         qw_to_esc {
             bindings = <&kp ESCAPE>;
             key-positions = <0 1>;
@@ -79,7 +74,7 @@
 
         ASisAT {
             bindings = <&kp JP_AT>;
-            key-positions = <10 11>;
+            key-positions = <12 13>;
         };
 
         dk_backspace {
