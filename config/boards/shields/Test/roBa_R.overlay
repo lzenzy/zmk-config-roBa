@@ -19,7 +19,7 @@
 / {
     // Custom scroll speed scaler to prevent scroll jumping
     input_processors {
-        zip_scroll_scaler: zip_scroll_scaler {
+        roba_scroll_scaler: roba_scroll_scaler {
             compatible = "zmk,input-processor-scaler";
             #input-processor-cells = <2>;
             type = <INPUT_EV_REL>;
@@ -40,7 +40,7 @@
         // Scroll mode on layer 10 with optimized speed
         xy_scroll {
             layers = <10>;
-            input-processors = <&zip_xy_to_scroll_mapper>, <&zip_scroll_scaler 1 2>;
+            input-processors = <&zip_xy_to_scroll_mapper>, <&roba_scroll_scaler 1 2>;
         };
     };
 };
