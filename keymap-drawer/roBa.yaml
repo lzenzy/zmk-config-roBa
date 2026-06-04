@@ -40,7 +40,7 @@ layers:
   - LEFT WIN
   - {t: LANGUAGE 2, h: LEFT ALT}
   - {t: LANG2, h: NUM_ARROW}
-  - {t: BSPC, h: SYMBOL}
+  - {t: SPACE, h: SYMBOL}
   - {t: SPACE, h: CONFIG}
   - {t: LANG1, h: NUM_ARROW}
   - {t: ENTER, h: Mouse}
