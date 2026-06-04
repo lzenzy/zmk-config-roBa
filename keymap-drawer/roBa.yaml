@@ -487,15 +487,13 @@ layers:
 combos:
 - p: [11, 12]
   k: TAB
-- p: [12, 13]
-  k: Sft+TAB
 - p: [0, 1]
   k: ESCAPE
 - p: [8, 9]
   k: DEL
 - p: [20, 21]
   k: BSPC
-- p: [10, 11]
+- p: [12, 13]
   k: '['
 - p: [19, 20]
   k: BACKSPACE
