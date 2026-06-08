@@ -435,10 +435,10 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
+  - '&mc_lang2'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
-  - {t: ▽, type: trans}
+  - '&mc_lang1'
   - {t: ▽, type: trans}
   SCROLL:
   - {t: ▽, type: trans}
