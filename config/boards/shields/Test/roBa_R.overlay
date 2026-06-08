@@ -1,4 +1,7 @@
 #include "roBa.dtsi"
+#include <input/processors.dtsi>
+#include <behaviors/input_gestures_accel.dtsi>
+#include <zephyr/dt-bindings/input/input-event-codes.h>
 
 &default_transform {
     col-offset = <6>;
@@ -19,7 +22,18 @@
         status = "okay";
         compatible = "zmk,input-listener";
         device = <&trackball>;
+        input-processors = <&pointer_accel>;
     };
+};
+
+&pointer_accel {
+    input-type = <INPUT_EV_REL>;
+    min-factor = <600>;            // 遅い時 0.6倍（精密重視）
+    max-factor = <2000>;           // 速い時 2.0倍
+    speed-threshold = <1200>;      // 加速が効き始める速度
+    speed-max = <6000>;            // 最大加速に達する速度
+    acceleration-exponent = <2>;   // カーブの効き（2=二次）
+    track-remainders;
 };
 
 &pinctrl {
