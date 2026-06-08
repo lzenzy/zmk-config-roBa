@@ -24,6 +24,7 @@
 #define JP_ASTERISK     DOUBLE_QUOTES     // *
 #define JP_BACKQUOTE    LEFT_BRACE        // `
 #define JP_UNDERSCORE   LS(0x87)          // _
+#define JP_BACKSLASH    0x87              // (バックスラッシュ)
 #define JP_LBRACKET     RIGHT_BRACKET     // [
 #define JP_RBRACKET     BACKSLASH         // ]
 #define JP_LPAREN       ASTERISK          // (
@@ -240,7 +241,7 @@
             bindings = <
 &kp JP_LBRACE   &kp JP_QUOTE     &kp JP_LPAREN  &kp JP_RPAREN     &kp JP_RBRACE                                 &kp JP_LBRACKET  &kp JP_BACKQUOTE  &kp JP_PIPE  &kp JP_EQUAL  &kp JP_TILDE
 &kp LEFT_SHIFT  &kp DOLLAR       &kp PERCENT    &kp JP_AMPERSAND  &kp ASTERISK   &trans      &kp DOUBLE_QUOTES  &kp JP_RBRACKET  &trans            &trans       &trans        &kp PLUS
-&kp JP_PLUS     &kp EXCLAMATION  &kp JP_DQUOTE  &kp HASH          &kp SLASH      &trans      &trans             &trans           &trans            &trans       &trans        &kp BACKSLASH
+&kp JP_PLUS     &kp EXCLAMATION  &kp JP_DQUOTE  &kp HASH          &kp SLASH      &trans      &trans             &trans           &trans            &trans       &trans        &kp JP_BACKSLASH
 &trans          &trans           &trans         &trans            &trans         &trans      &trans             &trans                                                        &kp LS(ENTER)
             >;
 
@@ -258,7 +259,7 @@
 
         IPAD_NUM_ARROW {
             bindings = <
-&kp LEFT_BRACKET  &trans  &trans  &trans  &kp RIGHT_BRACKET                                          &kp GRAVE  &kp AT_SIGN  &kp BACKSLASH  &kp MINUS  &kp CARET
+&kp LEFT_BRACKET  &trans  &trans  &trans  &kp RIGHT_BRACKET                                          &kp GRAVE  &kp AT_SIGN  &kp JP_BACKSLASH  &kp MINUS  &kp CARET
 &trans            &trans  &trans  &trans  &kp PLUS           &kp LEFT_PARENTHESIS       &kp SQT      &trans     &trans       &trans         &trans     &kp SEMICOLON
 &trans            &trans  &trans  &trans  &kp EQUAL          &kp RIGHT_PARENTHESIS      &kp AT_SIGN  &trans     &trans       &lt 10 COMMA   &trans     &kp UNDERSCORE
 &trans            &trans  &trans  &trans  &trans             &trans                     &trans       &trans                                            &trans
@@ -271,7 +272,7 @@
             bindings = <
 &trans  &trans  &trans  &trans  &trans                                       &trans  &kp GRAVE  &kp PIPE      &kp EQUAL  &kp TILDE
 &trans  &trans  &trans  &trans  &kp ASTERISK  &trans      &kp DOUBLE_QUOTES  &trans  &trans     &trans        &trans     &kp PLUS
-&trans  &trans  &trans  &trans  &kp SLASH     &trans      &trans             &trans  &trans     &lt 10 COMMA  &trans     &kp BACKSLASH
+&trans  &trans  &trans  &trans  &kp SLASH     &trans      &trans             &trans  &trans     &lt 10 COMMA  &trans     &kp JP_BACKSLASH
 &trans  &trans  &trans  &trans  &trans        &trans      &trans             &trans                                      &trans
             >;
         };
