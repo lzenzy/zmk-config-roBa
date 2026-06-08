@@ -166,6 +166,22 @@
             bindings = <&tog 9>;
             label = "TOGGLE_9";
         };
+
+        // マウス層(9)を抜けつつ言語切替（英数）
+        mc_lang2: mc_lang2 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&tog 9>, <&kp LANGUAGE_2>;
+            label = "MC_LANG2";
+        };
+
+        // マウス層(9)を抜けつつ言語切替（かな）
+        mc_lang1: mc_lang1 {
+            compatible = "zmk,behavior-macro";
+            #binding-cells = <0>;
+            bindings = <&tog 9>, <&kp LANGUAGE_1>;
+            label = "MC_LANG1";
+        };
     };
 
     behaviors {
@@ -294,7 +310,7 @@
 &trans  &trans  &trans        &trans          &trans                      &trans  &trans    &trans        &trans  &trans
 &trans  &trans  &kp UP_ARROW  &kp DOWN_ARROW  &trans  &trans      &kp N9  &trans  &mkp MB1  &mkp MB2      &trans  &trans
 &trans  &trans  &kp PAGE_UP   &kp PAGE_DOWN   &trans  &trans      &trans  &trans  &trans    &lt 10 COMMA  &trans  &trans
-&trans  &trans  &trans        &trans          &trans  &trans      &trans  &trans                                  &trans
+&trans  &trans  &trans        &trans          &mc_lang2  &trans      &trans  &mc_lang1                                  &trans
             >;
         };
 
