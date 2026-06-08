@@ -24,7 +24,7 @@
 #define JP_ASTERISK     DOUBLE_QUOTES     // *
 #define JP_BACKQUOTE    LEFT_BRACE        // `
 #define JP_UNDERSCORE   LS(0x87)          // _
-#define JP_BACKSLASH    0x87              // (バックスラッシュ)
+#define JP_BACKSLASH    LA(0x89)          // \ (Option+¥)
 #define JP_LBRACKET     RIGHT_BRACKET     // [
 #define JP_RBRACKET     BACKSLASH         // ]
 #define JP_LPAREN       ASTERISK          // (
