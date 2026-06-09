@@ -28,8 +28,8 @@
 
 &pointer_accel {
     input-type = <INPUT_EV_REL>;
-    min-factor = <600>;            // 遅い時 0.6倍（精密重視）
-    max-factor = <2000>;           // 速い時 2.0倍
+    min-factor = <800>;            // 遅い時 0.8倍
+    max-factor = <1500>;           // 速い時 1.5倍
     speed-threshold = <1200>;      // 加速が効き始める速度
     speed-max = <6000>;            // 最大加速に達する速度
     acceleration-exponent = <2>;   // カーブの効き（2=二次）
