@@ -271,7 +271,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '&bt_Mac'
-  - '&bt_iPad'
+  - '&bt_Mac1'
   - '&bt_2'
   - '&bt_3'
   - '&bt_4'
@@ -465,7 +465,7 @@ layers:
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
   - '&bt_Mac'
-  - '&bt_iPad'
+  - '&bt_Mac1'
   - '&bt_2'
   - {t: ▽, type: trans}
   - {t: ▽, type: trans}
