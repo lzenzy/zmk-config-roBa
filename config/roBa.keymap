@@ -129,12 +129,12 @@
             label = "MAC";
         };
 
-        bt_iPad: iPad {
+        bt_Mac1: bt_Mac1 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
             bindings = <&bt BT_SEL 1>, <&macro_wait_time 100>, <&to 8>;
 
-            label = "IPAD";
+            label = "MAC1";
         };
 
         bt_2: bt_other {
@@ -148,7 +148,7 @@
         bt_3: bt_3 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 3>, <&macro_wait_time 100>, <&tog 0>;
+            bindings = <&bt BT_SEL 3>, <&macro_wait_time 100>, <&to 8>;
 
             label = "BT_3";
         };
@@ -156,7 +156,7 @@
         bt_4: bt_4 {
             compatible = "zmk,behavior-macro";
             #binding-cells = <0>;
-            bindings = <&bt BT_SEL 4>, <&macro_wait_time 100>, <&to 0>;
+            bindings = <&bt BT_SEL 4>, <&macro_wait_time 100>, <&to 8>;
 
             label = "BT_4";
         };
@@ -279,7 +279,7 @@
 
         CONFIG {
             bindings = <
-&trans  &trans  &trans  &trans  &trans                                       &bt_Mac                      &bt_iPad  &bt_2              &bt_3              &bt_4
+&trans  &trans  &trans  &trans  &trans                                       &bt_Mac                      &bt_Mac1  &bt_2              &bt_3              &bt_4
 &trans  &trans  &trans  &trans  &trans  &trans      &kp C_VOL_UP             &kp C_AC_ZOOM_IN             &trans    &trans             &ipad_toggle       &apple_toggle
 &trans  &trans  &trans  &trans  &trans  &trans      &mt LS(K_MUTE) C_VOL_DN  &mt C_AC_ZOOM C_AC_ZOOM_OUT  &trans    &kp LS(LA(SPACE))  &kp RIGHT_COMMAND  &bt BT_CLR
 &trans  &trans  &trans  &trans  &trans  &trans      &trans                   &trans                                                                       &bt BT_CLR_ALL
@@ -319,7 +319,7 @@
             bindings = <
 &trans  &trans   &trans    &trans  &trans                      &trans  &trans  &trans  &trans  &trans
 &trans  &bt_3    &bt_4     &trans  &trans  &to 0       &kp S   &trans  &trans  &trans  &trans  &trans
-&trans  &bt_Mac  &bt_iPad  &bt_2   &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
+&trans  &bt_Mac  &bt_Mac1  &bt_2   &trans  &trans      &trans  &trans  &trans  &trans  &trans  &trans
 &trans  &trans   &trans    &trans  &trans  &trans      &trans  &trans                          &trans
             >;
         };
